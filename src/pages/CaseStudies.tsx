@@ -24,8 +24,8 @@ const caseStudies = [
     category: "mind",
     format: "Article",
     audience: "Student",
-    description: "A deep dive into the rising crisis of mental health and suicide, with practical spiritual solutions.",
-    image: "https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?w=800&q=80",
+    description: "A deep dive into the rising crisis of mental health and suicide among youth, with practical spiritual solutions rooted in Vedic wisdom.",
+    image: "https://images.unsplash.com/photo-1493836512294-502baa1986e2?w=800&q=80",
     featured: true,
   },
   {
@@ -34,16 +34,16 @@ const caseStudies = [
     category: "mind",
     format: "Article",
     audience: "Young Professional",
-    description: "How the teachings of Bhagavad Gita offer practical tools for managing modern-day stress.",
+    description: "How the teachings of Bhagavad Gita offer practical tools for managing modern-day stress and finding lasting peace.",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
   },
   {
     slug: "building-lasting-relationships",
     title: "Building Lasting Relationships",
     category: "relationships",
-    format: "Infographic",
+    format: "Article",
     audience: "Young Professional",
-    description: "Vedic principles for creating meaningful connections in the age of superficiality.",
+    description: "Vedic principles for creating meaningful connections in an age of superficiality and instant gratification.",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
   },
   {
@@ -52,7 +52,7 @@ const caseStudies = [
     category: "career",
     format: "Article",
     audience: "Student",
-    description: "How to choose a career path aligned with your nature and higher purpose.",
+    description: "How to choose a career path aligned with your nature, values, and higher purpose using Vedic wisdom.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
   },
   {
@@ -61,7 +61,7 @@ const caseStudies = [
     category: "youth",
     format: "Worksheet",
     audience: "Student",
-    description: "A 21-day protocol to reclaim your attention and mental peace.",
+    description: "A 21-day protocol to reclaim your attention, time, and mental peace from technology's grip.",
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
   },
   {
@@ -70,7 +70,7 @@ const caseStudies = [
     category: "mind",
     format: "Article",
     audience: "Young Professional",
-    description: "Understanding the root causes of anxiety and finding lasting peace through spiritual practice.",
+    description: "Understanding the root causes of anxiety and finding lasting peace through spiritual practice and purpose.",
     image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80",
   },
 ];

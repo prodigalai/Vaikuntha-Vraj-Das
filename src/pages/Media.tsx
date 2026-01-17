@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Play, Headphones, Film, Radio, Filter } from "lucide-react";
 import { useState } from "react";
 
@@ -12,8 +12,7 @@ const mediaTypes = [
   { id: "live", label: "Live Archive", icon: Radio },
 ];
 
-const topics = ["All Topics", "Bhagavad Gita", "Youth", "Relationships", "Career", "Meditation"];
-const durations = ["Any Duration", "Under 15 min", "15-30 min", "30-60 min", "Over 1 hour"];
+const topics = ["All Topics", "Bhagavad Gita", "Youth", "Relationships", "Career", "Meditation", "Mental Health"];
 
 const mediaItems = [
   {
@@ -22,39 +21,39 @@ const mediaItems = [
     title: "Managing Stress: Lessons from Bhagavad Gita",
     topic: "Bhagavad Gita",
     duration: "45 min",
-    thumbnail: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
+    videoId: "1Ay-sSBYZj8",
     views: "12K",
     platform: "YouTube",
   },
   {
     id: "2",
     type: "videos",
-    title: "Finding Purpose in Your 20s",
+    title: "Spiritual Solutions for Modern Challenges",
     topic: "Youth",
     duration: "38 min",
-    thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    videoId: "hSaw27_Gxnw",
     views: "8.5K",
     platform: "YouTube",
   },
   {
     id: "3",
-    type: "podcasts",
-    title: "The Art of Detachment",
-    topic: "Meditation",
-    duration: "52 min",
-    thumbnail: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&q=80",
-    views: "3.2K",
-    platform: "SoundCloud",
+    type: "videos",
+    title: "Finding Purpose through Gita's Wisdom",
+    topic: "Bhagavad Gita",
+    duration: "50 min",
+    videoId: "1lfBJ6eHUw0",
+    views: "6.2K",
+    platform: "YouTube",
   },
   {
     id: "4",
-    type: "shorts",
-    title: "One Truth That Changed My Life",
-    topic: "Youth",
-    duration: "60 sec",
-    thumbnail: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
-    views: "25K",
-    platform: "Instagram",
+    type: "videos",
+    title: "Mental Health & Spiritual Perspective",
+    topic: "Mental Health",
+    duration: "42 min",
+    videoId: "hhypOISfCwo",
+    views: "15K",
+    platform: "YouTube",
   },
   {
     id: "5",
@@ -62,18 +61,48 @@ const mediaItems = [
     title: "Building Meaningful Relationships",
     topic: "Relationships",
     duration: "55 min",
-    thumbnail: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+    videoId: "1Ay-sSBYZj8",
     views: "6.1K",
     platform: "YouTube",
   },
   {
     id: "6",
     type: "live",
-    title: "Live Q&A: Career Decisions",
+    title: "Live Q&A: Career Decisions from Gita",
     topic: "Career",
     duration: "1h 20 min",
-    thumbnail: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+    videoId: "hSaw27_Gxnw",
     views: "4.8K",
+    platform: "YouTube",
+  },
+  {
+    id: "7",
+    type: "videos",
+    title: "Overcoming Anxiety with Vedic Wisdom",
+    topic: "Mental Health",
+    duration: "48 min",
+    videoId: "1lfBJ6eHUw0",
+    views: "9.3K",
+    platform: "YouTube",
+  },
+  {
+    id: "8",
+    type: "videos",
+    title: "Youth & Spirituality: Finding Balance",
+    topic: "Youth",
+    duration: "35 min",
+    videoId: "hhypOISfCwo",
+    views: "7.8K",
+    platform: "YouTube",
+  },
+  {
+    id: "9",
+    type: "videos",
+    title: "The Power of Daily Sadhana",
+    topic: "Meditation",
+    duration: "40 min",
+    videoId: "1Ay-sSBYZj8",
+    views: "5.4K",
     platform: "YouTube",
   },
 ];
@@ -82,6 +111,7 @@ const Media = () => {
   const { type } = useParams();
   const [selectedType, setSelectedType] = useState(type || "all");
   const [selectedTopic, setSelectedTopic] = useState("All Topics");
+  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
 
   const filteredMedia = mediaItems.filter(item => {
     const typeMatch = selectedType === "all" || item.type === selectedType;
@@ -172,30 +202,74 @@ const Media = () => {
           </select>
         </div>
 
+        {/* Featured Video */}
+        <div className="mb-12 rounded-3xl overflow-hidden bg-card">
+          <div className="aspect-video">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/1Ay-sSBYZj8"
+              title="Featured: Managing Stress - Lessons from Bhagavad Gita"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+          <div className="p-6">
+            <span className="text-xs text-primary font-medium uppercase tracking-wide">Featured</span>
+            <h2 className="text-2xl font-bold mt-2">Managing Stress: Lessons from Bhagavad Gita</h2>
+            <p className="text-muted-foreground mt-2">
+              A comprehensive discourse on applying Gita's timeless wisdom to manage modern-day stress and anxiety.
+            </p>
+          </div>
+        </div>
+
         {/* Media Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredMedia.map((item, index) => (
             <div 
               key={item.id}
-              className={`group rounded-2xl overflow-hidden bg-card card-hover cursor-pointer animate-slide-up stagger-${Math.min(index + 1, 6)}`}
+              className={`group rounded-2xl overflow-hidden bg-card card-hover animate-slide-up stagger-${Math.min(index + 1, 6)}`}
             >
               <div className="relative aspect-video overflow-hidden">
-                <img 
-                  src={item.thumbnail} 
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center">
-                    <Play className="w-8 h-8 text-primary-foreground" />
-                  </div>
-                </div>
-                <div className="absolute bottom-3 right-3 px-2 py-1 rounded bg-black/70 text-white text-xs">
-                  {item.duration}
-                </div>
-                <div className="absolute top-3 left-3 px-2 py-1 rounded bg-background/90 text-xs font-medium">
-                  {item.platform}
-                </div>
+                {playingVideo === item.id ? (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${item.videoId}?autoplay=1`}
+                    title={item.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                ) : (
+                  <>
+                    <img 
+                      src={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
+                      }}
+                    />
+                    <button 
+                      onClick={() => setPlayingVideo(item.id)}
+                      className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center">
+                        <Play className="w-8 h-8 text-primary-foreground" />
+                      </div>
+                    </button>
+                    <div className="absolute bottom-3 right-3 px-2 py-1 rounded bg-black/70 text-white text-xs">
+                      {item.duration}
+                    </div>
+                    <div className="absolute top-3 left-3 px-2 py-1 rounded bg-background/90 text-xs font-medium">
+                      {item.platform}
+                    </div>
+                  </>
+                )}
               </div>
               <div className="p-5">
                 <span className="text-xs text-primary font-medium uppercase tracking-wide">
@@ -210,11 +284,21 @@ const Media = () => {
           ))}
         </div>
 
-        {/* Load More */}
-        <div className="text-center mt-12">
-          <button className="px-8 py-3 rounded-full border border-border hover:bg-muted transition-colors font-medium">
-            Load More
-          </button>
+        {/* Subscribe CTA */}
+        <div className="mt-16 text-center rounded-3xl bg-gradient-to-br from-saffron-light/30 to-gold-light/40 p-8 md:p-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Never Miss a Teaching</h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Subscribe to our YouTube channel for weekly discourses on Bhagavad Gita, spiritual wisdom, and practical guidance for modern life.
+          </p>
+          <a 
+            href="https://www.youtube.com/@vaikunthavrajdas?sub_confirmation=1" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition-colors"
+          >
+            <Play className="w-5 h-5" />
+            Subscribe on YouTube
+          </a>
         </div>
       </main>
 

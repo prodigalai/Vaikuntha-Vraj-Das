@@ -32,9 +32,12 @@ const About = () => {
         <section className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden animate-scale-in">
             <img 
-              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" 
-              alt="Vaikuntha Vraj Das"
+              src="https://i.ytimg.com/vi/hSaw27_Gxnw/maxresdefault.jpg" 
+              alt="Vaikuntha Vraj Das - Spiritual Coach"
               className="w-full h-full object-cover"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80";
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
           </div>
