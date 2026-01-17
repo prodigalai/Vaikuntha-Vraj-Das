@@ -4,15 +4,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Article from "./pages/Article";
-import Wellness from "./pages/Wellness";
-import Travel from "./pages/Travel";
-import Creativity from "./pages/Creativity";
-import Growth from "./pages/Growth";
 import About from "./pages/About";
-import Authors from "./pages/Authors";
+import Journey from "./pages/Journey";
+import Teachings from "./pages/Teachings";
+import CaseStudies from "./pages/CaseStudies";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
+import Media from "./pages/Media";
+import Events from "./pages/Events";
+import Serve from "./pages/Serve";
+import Guidance from "./pages/Guidance";
 import Contact from "./pages/Contact";
-import StyleGuide from "./pages/StyleGuide";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
@@ -27,15 +28,20 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/article/:id" element={<Article />} />
-          <Route path="/wellness" element={<Wellness />} />
-          <Route path="/travel" element={<Travel />} />
-          <Route path="/creativity" element={<Creativity />} />
-          <Route path="/growth" element={<Growth />} />
           <Route path="/about" element={<About />} />
-          <Route path="/authors" element={<Authors />} />
+          <Route path="/journey" element={<Journey />} />
+          <Route path="/teachings" element={<Teachings />} />
+          <Route path="/teachings/:category" element={<Teachings />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+          <Route path="/media" element={<Media />} />
+          <Route path="/media/:type" element={<Media />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/serve" element={<Serve />} />
+          <Route path="/serve/:type" element={<Serve />} />
+          <Route path="/guidance" element={<Guidance />} />
+          <Route path="/guidance/:type" element={<Guidance />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/style-guide" element={<StyleGuide />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
