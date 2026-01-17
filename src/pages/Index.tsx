@@ -65,9 +65,12 @@ const Index = () => {
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80" 
-                  alt="Food distribution"
+                  src="https://i.ytimg.com/vi/1lfBJ6eHUw0/maxresdefault.jpg" 
+                  alt="ISKCON Punjabi Bagh Food Distribution"
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80";
+                  }}
                 />
               </div>
             </div>

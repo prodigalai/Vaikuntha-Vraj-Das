@@ -47,7 +47,14 @@ const HeroSection = () => {
           </div>
           <div className="relative animate-scale-in">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" alt="Vaikuntha Vraj Das" className="w-full h-full object-cover" />
+              <img 
+                src="https://i.ytimg.com/vi/1Ay-sSBYZj8/maxresdefault.jpg" 
+                alt="Vaikuntha Vraj Das - Spiritual Guide" 
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80";
+                }}
+              />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-4 shadow-xl border border-border">
               <div className="text-3xl font-bold text-primary">13+</div>
