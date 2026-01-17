@@ -2,103 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Vaikuntha Vraj Das - Spiritual Design System
+   Warm saffron/golden tones with modern typography
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Warm, sophisticated palette inspired by the design */
-    --background: 36 44% 96%;
-    --foreground: 0 0% 18%;
+    /* Warm spiritual palette - light theme (default) */
+    --background: 45 50% 97%;
+    --foreground: 30 20% 18%;
 
-    --card: 33 40% 94%;
-    --card-foreground: 0 0% 18%;
+    --card: 40 45% 94%;
+    --card-foreground: 30 20% 18%;
 
-    --popover: 36 44% 96%;
-    --popover-foreground: 0 0% 18%;
+    --popover: 45 50% 97%;
+    --popover-foreground: 30 20% 18%;
 
-    --primary: 0 0% 18%;
-    --primary-foreground: 36 44% 96%;
+    /* Primary - Deep saffron/warm brown */
+    --primary: 25 70% 35%;
+    --primary-foreground: 45 50% 97%;
 
-    --secondary: 25 30% 70%;
-    --secondary-foreground: 0 0% 18%;
+    /* Secondary - Soft golden cream */
+    --secondary: 38 45% 85%;
+    --secondary-foreground: 30 20% 18%;
 
-    --muted: 33 30% 88%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 40 35% 90%;
+    --muted-foreground: 30 15% 45%;
 
-    --accent: 140 20% 50%;
-    --accent-foreground: 36 44% 96%;
+    /* Accent - Warm orange/saffron */
+    --accent: 32 85% 55%;
+    --accent-foreground: 45 50% 97%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 36 44% 96%;
+    --destructive-foreground: 45 50% 97%;
 
-    --border: 33 25% 85%;
-    --input: 33 25% 85%;
-    --ring: 0 0% 18%;
+    --border: 38 30% 85%;
+    --input: 38 30% 85%;
+    --ring: 25 70% 35%;
 
     --radius: 1rem;
 
-    /* Custom design tokens */
-    --tag-financing: 210 50% 75%;
-    --tag-lifestyle: 140 20% 70%;
-    --tag-community: 25 35% 60%;
-    --tag-wellness: 280 30% 75%;
-    --tag-travel: 195 50% 70%;
-    --tag-creativity: 330 40% 75%;
-    --tag-growth: 50 45% 70%;
-
-    /* Polish design tokens */
-    --cream: 40 40% 90%;
-    --cream-foreground: 0 0% 18%;
-    --surface-elevated: 36 44% 98%;
-    --shadow-soft: 0 0% 0%;
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Spiritual design tokens */
+    --saffron: 25 85% 50%;
+    --saffron-light: 35 80% 70%;
+    --saffron-dark: 20 75% 30%;
+    --gold: 45 80% 55%;
+    --gold-light: 48 70% 80%;
+    --cream: 42 50% 92%;
+    --cream-foreground: 30 20% 18%;
+    --warm-white: 40 30% 98%;
+    --surface-elevated: 42 45% 96%;
+    --shadow-soft: 30 30% 20%;
+    
+    /* Category colors */
+    --tag-mind: 280 35% 75%;
+    --tag-relationships: 340 40% 75%;
+    --tag-career: 45 50% 70%;
+    --tag-youth: 200 45% 70%;
+    --tag-parenting: 160 35% 70%;
+    --tag-faith: 25 55% 65%;
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 36 44% 96%;
+    --background: 25 15% 10%;
+    --foreground: 40 40% 92%;
 
-    --card: 0 0% 14%;
-    --card-foreground: 36 44% 96%;
+    --card: 25 15% 14%;
+    --card-foreground: 40 40% 92%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 36 44% 96%;
+    --popover: 25 15% 10%;
+    --popover-foreground: 40 40% 92%;
 
-    --primary: 36 44% 96%;
-    --primary-foreground: 0 0% 18%;
+    --primary: 35 75% 55%;
+    --primary-foreground: 25 15% 10%;
 
-    --secondary: 25 15% 30%;
-    --secondary-foreground: 36 44% 96%;
+    --secondary: 30 25% 25%;
+    --secondary-foreground: 40 40% 92%;
 
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 25 15% 20%;
+    --muted-foreground: 30 20% 60%;
 
-    --accent: 140 20% 45%;
-    --accent-foreground: 36 44% 96%;
+    --accent: 32 80% 50%;
+    --accent-foreground: 25 15% 10%;
 
     --destructive: 0 62% 50%;
-    --destructive-foreground: 36 44% 96%;
+    --destructive-foreground: 40 40% 92%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 36 44% 96%;
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 35 75% 55%;
 
-    /* Dark mode tag colors */
-    --tag-financing: 210 40% 45%;
-    --tag-lifestyle: 140 20% 40%;
-    --tag-community: 25 30% 40%;
-    --tag-wellness: 280 25% 45%;
-    --tag-travel: 195 40% 45%;
-    --tag-creativity: 330 35% 45%;
-    --tag-growth: 50 40% 45%;
-
-    /* Dark mode polish tokens */
-    --cream: 40 20% 25%;
-    --cream-foreground: 36 44% 96%;
-    --surface-elevated: 0 0% 16%;
+    /* Dark mode spiritual tokens */
+    --saffron: 30 80% 45%;
+    --saffron-light: 35 70% 55%;
+    --saffron-dark: 25 70% 25%;
+    --gold: 45 70% 45%;
+    --gold-light: 48 60% 35%;
+    --cream: 35 25% 22%;
+    --cream-foreground: 40 40% 92%;
+    --warm-white: 25 15% 16%;
+    --surface-elevated: 25 15% 18%;
     --shadow-soft: 0 0% 0%;
+
+    /* Dark mode category colors */
+    --tag-mind: 280 30% 45%;
+    --tag-relationships: 340 35% 45%;
+    --tag-career: 45 45% 45%;
+    --tag-youth: 200 40% 45%;
+    --tag-parenting: 160 30% 45%;
+    --tag-faith: 25 50% 45%;
   }
 }
 
@@ -127,16 +140,41 @@ All colors MUST be HSL.
   }
 
   .card-hover:hover {
-    box-shadow: 0 20px 40px -10px hsl(var(--shadow-soft) / 0.15);
+    box-shadow: 0 20px 40px -10px hsl(var(--shadow-soft) / 0.18);
   }
 
   .pill-nav {
-    @apply rounded-full bg-[hsl(var(--surface-elevated))] backdrop-blur-lg border border-border/50;
+    @apply rounded-full bg-[hsl(var(--surface-elevated)/0.95)] backdrop-blur-lg border border-border/50;
   }
 
   .floating-button {
     @apply w-12 h-12 rounded-full bg-[hsl(var(--cream)/0.9)] backdrop-blur-sm flex items-center justify-center text-[hsl(var(--cream-foreground))] hover:bg-[hsl(var(--cream))] hover:scale-110 transition-all duration-300;
     box-shadow: 0 4px 12px -2px hsl(var(--shadow-soft) / 0.15);
+  }
+
+  /* Saffron gradient backgrounds */
+  .bg-saffron-gradient {
+    background: linear-gradient(135deg, hsl(var(--saffron-light)) 0%, hsl(var(--gold-light)) 50%, hsl(var(--cream)) 100%);
+  }
+
+  .bg-spiritual-gradient {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--cream)) 100%);
+  }
+
+  .text-saffron {
+    @apply text-[hsl(var(--saffron))];
+  }
+
+  .text-gold {
+    @apply text-[hsl(var(--gold))];
+  }
+
+  .bg-saffron {
+    @apply bg-[hsl(var(--saffron))];
+  }
+
+  .bg-gold {
+    @apply bg-[hsl(var(--gold))];
   }
 
   /* Animation keyframes */
@@ -182,6 +220,15 @@ All colors MUST be HSL.
     }
   }
 
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out;
   }
@@ -196,6 +243,10 @@ All colors MUST be HSL.
 
   .animate-scale-in {
     animation: scaleIn 0.5s ease-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
 
   /* Stagger animations */
@@ -235,31 +286,37 @@ All colors MUST be HSL.
     animation-fill-mode: forwards;
   }
 
-  .tag-financing {
-    @apply bg-[hsl(var(--tag-financing))] text-primary;
+  /* Category tags */
+  .tag-mind {
+    @apply bg-[hsl(var(--tag-mind))] text-foreground;
   }
 
-  .tag-lifestyle {
-    @apply bg-[hsl(var(--tag-lifestyle))] text-primary;
+  .tag-relationships {
+    @apply bg-[hsl(var(--tag-relationships))] text-foreground;
   }
 
-  .tag-community {
-    @apply bg-[hsl(var(--tag-community))] text-primary;
+  .tag-career {
+    @apply bg-[hsl(var(--tag-career))] text-foreground;
   }
 
-  .tag-wellness {
-    @apply bg-[hsl(var(--tag-wellness))] text-primary;
+  .tag-youth {
+    @apply bg-[hsl(var(--tag-youth))] text-foreground;
   }
 
-  .tag-travel {
-    @apply bg-[hsl(var(--tag-travel))] text-primary;
+  .tag-parenting {
+    @apply bg-[hsl(var(--tag-parenting))] text-foreground;
   }
 
-  .tag-creativity {
-    @apply bg-[hsl(var(--tag-creativity))] text-primary;
+  .tag-faith {
+    @apply bg-[hsl(var(--tag-faith))] text-foreground;
   }
 
-  .tag-growth {
-    @apply bg-[hsl(var(--tag-growth))] text-primary;
+  /* Decorative elements */
+  .lotus-border {
+    border-image: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--gold))) 1;
+  }
+
+  .glow-saffron {
+    box-shadow: 0 0 40px -10px hsl(var(--saffron) / 0.4);
   }
 }
