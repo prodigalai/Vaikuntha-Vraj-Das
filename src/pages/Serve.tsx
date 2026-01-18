@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import { useParams, Link } from "react-router-dom";
 import { Heart, Users, HandHeart, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import sevaFoodService from "@/assets/seva-food-service.jpg";
+import volunteerCommunity from "@/assets/volunteer-community.jpg";
+import foodDistributionSeva from "@/assets/food-distribution-seva.jpg";
 
 const serveOptions = [
   {
@@ -10,7 +13,7 @@ const serveOptions = [
     title: "Food Distribution",
     icon: Heart,
     description: "Join our daily prasadam distribution serving thousands of meals to those in need.",
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80",
+    image: sevaFoodService,
     impact: "10,000+ meals served monthly",
   },
   {
@@ -18,7 +21,7 @@ const serveOptions = [
     title: "Volunteer",
     icon: Users,
     description: "Contribute your time and skills to various temple and community programs.",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80",
+    image: volunteerCommunity,
     impact: "100+ active volunteers",
   },
   {
@@ -26,7 +29,7 @@ const serveOptions = [
     title: "Donate",
     icon: HandHeart,
     description: "Support our initiatives through financial contributions.",
-    image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&q=80",
+    image: foodDistributionSeva,
     impact: "Every contribution matters",
   },
 ];
