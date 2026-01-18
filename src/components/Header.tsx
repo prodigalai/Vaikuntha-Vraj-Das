@@ -52,11 +52,8 @@ const Header = () => {
     { name: "Media", path: "/media" },
     { name: "Events", path: "/events" },
     { name: "Serve", path: "/serve" },
-  ];
-
-  const mobileNavItems = [
-    ...navItems.slice(0, 5),
-    { name: "More", path: "#", isMore: true },
+    { name: "Guidance", path: "/guidance" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
