@@ -7,6 +7,7 @@ import LatestMedia from "@/components/LatestMedia";
 import Testimonials from "@/components/Testimonials";
 import EventsTeaser from "@/components/EventsTeaser";
 import Newsletter from "@/components/Newsletter";
+import foodDistributionImg from "@/assets/food-distribution-seva.jpg";
 
 const Index = () => {
   return (
@@ -65,12 +66,9 @@ const Index = () => {
               </div>
               <div className="relative aspect-video rounded-2xl overflow-hidden">
                 <img 
-                  src="https://i.ytimg.com/vi/1lfBJ6eHUw0/maxresdefault.jpg" 
+                  src={foodDistributionImg}
                   alt="ISKCON Punjabi Bagh Food Distribution"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80";
-                  }}
                 />
               </div>
             </div>

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { GraduationCap, Heart, Users, BookOpen, Mic, Award } from "lucide-react";
+import journeyBanner from "@/assets/spiritual-journey-banner.jpg";
 
 const Journey = () => {
   const milestones = [
@@ -82,7 +83,7 @@ const Journey = () => {
         {/* Hero Image */}
         <div className="relative aspect-[21/9] rounded-3xl overflow-hidden mb-20 animate-scale-in">
           <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80" 
+            src={journeyBanner}
             alt="Spiritual journey"
             className="w-full h-full object-cover"
           />

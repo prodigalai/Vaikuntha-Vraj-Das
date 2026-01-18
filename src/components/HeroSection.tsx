@@ -1,6 +1,7 @@
 import { Instagram, Facebook, Youtube, Play, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import heroPortrait from "@/assets/vaikuntha-vraj-das-portrait.jpg";
 
 const HeroSection = () => {
   return (
@@ -48,12 +49,9 @@ const HeroSection = () => {
           <div className="relative animate-scale-in">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="https://i.ytimg.com/vi/1Ay-sSBYZj8/maxresdefault.jpg" 
+                src={heroPortrait}
                 alt="Vaikuntha Vraj Das - Spiritual Guide" 
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80";
-                }}
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-4 shadow-xl border border-border">
