@@ -2,6 +2,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, MapPin, Clock, Users, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import spiritualEventGathering from "@/assets/spiritual-event-gathering.jpg";
+import youthMentorship from "@/assets/youth-mentorship.jpg";
+import bhagavadGitaStudy from "@/assets/bhagavad-gita-study.jpg";
 
 const upcomingEvents = [
   {
@@ -43,7 +46,7 @@ const pastEvents = [
     date: "January 1, 2026",
     location: "ISKCON Punjabi Bagh, Delhi",
     attendees: 200,
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
+    image: spiritualEventGathering,
   },
   {
     id: "p2",
@@ -51,7 +54,7 @@ const pastEvents = [
     date: "December 15, 2025",
     location: "IIT Delhi",
     attendees: 350,
-    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
+    image: youthMentorship,
   },
   {
     id: "p3",
@@ -59,7 +62,7 @@ const pastEvents = [
     date: "November 20, 2025",
     location: "ISKCON Punjabi Bagh, Delhi",
     attendees: 120,
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+    image: bhagavadGitaStudy,
   },
 ];
 

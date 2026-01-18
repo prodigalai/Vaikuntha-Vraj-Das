@@ -5,6 +5,7 @@ import { MessageCircle, Mic, HelpCircle, Users, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { toast } from "sonner";
+import spiritualGuidanceSetting from "@/assets/spiritual-guidance-setting.jpg";
 
 const guidanceOptions = [
   {
@@ -76,6 +77,14 @@ const Guidance = () => {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="mb-16 text-center space-y-6">
+          <div className="relative w-full max-w-4xl mx-auto aspect-[21/9] rounded-3xl overflow-hidden mb-8">
+            <img 
+              src={spiritualGuidanceSetting} 
+              alt="Spiritual guidance setting with Bhagavad Gita and sacred items"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+          </div>
           <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium animate-slide-down">
             Guidance
           </span>
