@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Download, Play, BookOpen, MessageCircle, AlertTriangle, Heart, Phone, FileText, ClipboardList } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { generateCaseStudyPDF, generateWorksheetPDF } from "@/lib/generatePDF";
+import { generate7DayCalmProtocolPDF } from "@/lib/generate7DayProtocolPDF";
 import { toast } from "sonner";
 
 const caseStudyData: Record<string, {
@@ -816,7 +817,7 @@ const CaseStudyDetail = () => {
         </section>
 
         {/* Download CTAs */}
-        <section className="mb-12 grid md:grid-cols-2 gap-6">
+        <section className="mb-12 grid md:grid-cols-3 gap-6">
           <div className="rounded-2xl bg-card p-8 text-center border border-border">
             <FileText className="w-12 h-12 text-primary mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-2">Download Protocol PDF</h3>
@@ -842,6 +843,25 @@ const CaseStudyDetail = () => {
               Download Worksheet
             </Button>
           </div>
+          {slug === "silent-epidemic-suicide-india" && (
+            <div className="rounded-2xl bg-gradient-to-br from-saffron-light/30 to-gold-light/40 p-8 text-center border border-primary/20">
+              <Heart className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2">7-Day Calm Protocol</h3>
+              <p className="text-muted-foreground mb-6 text-sm">Complete infographic guide to finding inner peace.</p>
+              <Button 
+                onClick={() => {
+                  generate7DayCalmProtocolPDF();
+                  toast.success("7-Day Calm Protocol downloaded!", {
+                    description: "Your journey to inner peace begins now.",
+                  });
+                }}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download Free
+              </Button>
+            </div>
+          )}
         </section>
 
         {/* Related Videos - Real YouTube Embeds */}

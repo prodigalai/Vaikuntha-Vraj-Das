@@ -137,19 +137,63 @@ const About = () => {
           </div>
         </section>
 
-        {/* Featured On */}
+        {/* As Seen On */}
         <section className="text-center mb-16">
-          <h3 className="text-lg text-muted-foreground mb-8">Featured On</h3>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <span className="px-6 py-3 rounded-full bg-muted text-muted-foreground font-medium">
-              Speaking Tree
-            </span>
-            <span className="px-6 py-3 rounded-full bg-muted text-muted-foreground font-medium">
-              Premier Institutes (IITs/NITs)
-            </span>
-            <span className="px-6 py-3 rounded-full bg-muted text-muted-foreground font-medium">
-              Corporate Events
-            </span>
+          <h3 className="text-lg text-muted-foreground mb-8">As Seen On</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-items-center">
+            {/* Speaking Tree / Times of India */}
+            <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
+                <span className="text-white font-bold text-lg">ST</span>
+              </div>
+              <span className="text-sm font-medium text-center">Speaking Tree</span>
+              <span className="text-xs text-muted-foreground">Times of India</span>
+            </div>
+            
+            {/* Hare Krsna TV */}
+            <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">HK</span>
+              </div>
+              <span className="text-sm font-medium text-center">Hare Krsna TV</span>
+              <span className="text-xs text-muted-foreground">ISKCON Media</span>
+            </div>
+            
+            {/* IITs */}
+            <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                <span className="text-white font-bold text-sm">IIT</span>
+              </div>
+              <span className="text-sm font-medium text-center">IITs</span>
+              <span className="text-xs text-muted-foreground">Delhi, Bombay, Kanpur</span>
+            </div>
+            
+            {/* NITs */}
+            <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-600 to-emerald-700 flex items-center justify-center">
+                <span className="text-white font-bold text-sm">NIT</span>
+              </div>
+              <span className="text-sm font-medium text-center">NITs</span>
+              <span className="text-xs text-muted-foreground">Allahabad, Trichy +</span>
+            </div>
+            
+            {/* Corporate */}
+            <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
+                <span className="text-white font-bold text-sm">💼</span>
+              </div>
+              <span className="text-sm font-medium text-center">Corporates</span>
+              <span className="text-xs text-muted-foreground">Wellness Programs</span>
+            </div>
+            
+            {/* YouTube */}
+            <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center">
+                <span className="text-white font-bold text-lg">▶</span>
+              </div>
+              <span className="text-sm font-medium text-center">YouTube</span>
+              <span className="text-xs text-muted-foreground">10K+ Subscribers</span>
+            </div>
           </div>
         </section>
       </main>
