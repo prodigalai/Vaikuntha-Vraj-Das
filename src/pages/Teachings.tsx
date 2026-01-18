@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { useParams, Link } from "react-router-dom";
 import { BookOpen, Play, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import bhagavadGitaImg from "@/assets/bhagavad-gita-study.jpg";
 
 // Actual YouTube video IDs from @vaikunthavrajdas channel
 const featuredVideos = {
@@ -33,7 +34,7 @@ const teachingCategories = [
     id: "bhagavad-gita",
     title: "Bhagavad Gita",
     description: "The timeless dialogue between Lord Krishna and Arjuna, offering practical wisdom for life's challenges.",
-    image: "https://i.ytimg.com/vi/1Ay-sSBYZj8/maxresdefault.jpg",
+    image: bhagavadGitaImg,
     playlists: [
       { name: "Complete Chapter Series", videoCount: 18, duration: "6h 30m", videos: featuredVideos["bhagavad-gita"] },
       { name: "Life Lessons from Gita", videoCount: 12, duration: "4h 15m", videos: featuredVideos["bhagavad-gita"] },
