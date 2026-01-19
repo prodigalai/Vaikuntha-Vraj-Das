@@ -1,67 +1,82 @@
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/500.css';
+@import '@fontsource/playfair-display/600.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/dancing-script/400.css';
+@import '@fontsource/dancing-script/500.css';
+@import '@fontsource/dancing-script/600.css';
+@import '@fontsource/dancing-script/700.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Vaikuntha Vraj Das - Spiritual Design System
-   Warm saffron/golden tones with modern typography
+/* Vaikuntha Vraj Das - Premium Spiritual Design System
+   Inspired by Gaur Gopal Das - Calm, Warm, Soulful
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Warm spiritual palette - light theme (default) */
-    --background: 45 50% 97%;
-    --foreground: 30 20% 18%;
+    /* Premium spiritual palette - soft cream and beige tones */
+    --background: 40 40% 96%;
+    --foreground: 25 30% 20%;
 
-    --card: 40 45% 94%;
-    --card-foreground: 30 20% 18%;
+    --card: 38 35% 94%;
+    --card-foreground: 25 30% 20%;
 
-    --popover: 45 50% 97%;
-    --popover-foreground: 30 20% 18%;
+    --popover: 40 40% 96%;
+    --popover-foreground: 25 30% 20%;
 
-    /* Primary - Deep saffron/warm brown */
-    --primary: 25 70% 35%;
-    --primary-foreground: 45 50% 97%;
+    /* Primary - Warm golden/saffron */
+    --primary: 38 65% 45%;
+    --primary-foreground: 40 40% 98%;
 
-    /* Secondary - Soft golden cream */
-    --secondary: 38 45% 85%;
-    --secondary-foreground: 30 20% 18%;
+    /* Secondary - Soft warm beige */
+    --secondary: 35 30% 88%;
+    --secondary-foreground: 25 30% 20%;
 
-    --muted: 40 35% 90%;
-    --muted-foreground: 30 15% 45%;
+    --muted: 38 25% 90%;
+    --muted-foreground: 25 15% 40%;
 
-    /* Accent - Warm orange/saffron */
-    --accent: 32 85% 55%;
-    --accent-foreground: 45 50% 97%;
+    /* Accent - Rich warm gold */
+    --accent: 42 75% 50%;
+    --accent-foreground: 40 40% 98%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 45 50% 97%;
+    --destructive-foreground: 40 40% 98%;
 
-    --border: 38 30% 85%;
-    --input: 38 30% 85%;
-    --ring: 25 70% 35%;
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 38 65% 45%;
 
     --radius: 1rem;
 
-    /* Spiritual design tokens */
-    --saffron: 25 85% 50%;
-    --saffron-light: 35 80% 70%;
-    --saffron-dark: 20 75% 30%;
-    --gold: 45 80% 55%;
-    --gold-light: 48 70% 80%;
-    --cream: 42 50% 92%;
-    --cream-foreground: 30 20% 18%;
+    /* Spiritual design tokens - softer, warmer */
+    --saffron: 32 70% 50%;
+    --saffron-light: 38 60% 75%;
+    --saffron-dark: 28 60% 35%;
+    --gold: 42 70% 50%;
+    --gold-light: 45 55% 82%;
+    --cream: 40 45% 94%;
+    --cream-dark: 38 35% 88%;
+    --cream-foreground: 25 30% 20%;
     --warm-white: 40 30% 98%;
-    --surface-elevated: 42 45% 96%;
+    --warm-beige: 35 35% 90%;
+    --surface-elevated: 40 40% 96%;
     --shadow-soft: 30 30% 20%;
     
-    /* Category colors */
-    --tag-mind: 280 35% 75%;
-    --tag-relationships: 340 40% 75%;
-    --tag-career: 45 50% 70%;
-    --tag-youth: 200 45% 70%;
-    --tag-parenting: 160 35% 70%;
-    --tag-faith: 25 55% 65%;
+    /* Premium golden gradient for buttons */
+    --gold-gradient-start: 42 65% 55%;
+    --gold-gradient-end: 35 60% 45%;
+    
+    /* Category colors - softer, muted */
+    --tag-mind: 280 25% 78%;
+    --tag-relationships: 340 30% 78%;
+    --tag-career: 42 40% 75%;
+    --tag-youth: 200 35% 75%;
+    --tag-parenting: 160 25% 75%;
+    --tag-faith: 32 45% 70%;
   }
 
   .dark {
@@ -74,7 +89,7 @@
     --popover: 25 15% 10%;
     --popover-foreground: 40 40% 92%;
 
-    --primary: 35 75% 55%;
+    --primary: 38 70% 55%;
     --primary-foreground: 25 15% 10%;
 
     --secondary: 30 25% 25%;
@@ -83,7 +98,7 @@
     --muted: 25 15% 20%;
     --muted-foreground: 30 20% 60%;
 
-    --accent: 32 80% 50%;
+    --accent: 42 70% 50%;
     --accent-foreground: 25 15% 10%;
 
     --destructive: 0 62% 50%;
@@ -91,27 +106,32 @@
 
     --border: 25 15% 22%;
     --input: 25 15% 22%;
-    --ring: 35 75% 55%;
+    --ring: 38 70% 55%;
 
     /* Dark mode spiritual tokens */
-    --saffron: 30 80% 45%;
-    --saffron-light: 35 70% 55%;
-    --saffron-dark: 25 70% 25%;
-    --gold: 45 70% 45%;
-    --gold-light: 48 60% 35%;
+    --saffron: 32 65% 45%;
+    --saffron-light: 38 55% 55%;
+    --saffron-dark: 28 55% 25%;
+    --gold: 42 60% 45%;
+    --gold-light: 45 50% 35%;
     --cream: 35 25% 22%;
+    --cream-dark: 35 20% 18%;
     --cream-foreground: 40 40% 92%;
     --warm-white: 25 15% 16%;
+    --warm-beige: 30 15% 20%;
     --surface-elevated: 25 15% 18%;
     --shadow-soft: 0 0% 0%;
 
+    --gold-gradient-start: 42 55% 50%;
+    --gold-gradient-end: 35 50% 40%;
+
     /* Dark mode category colors */
-    --tag-mind: 280 30% 45%;
-    --tag-relationships: 340 35% 45%;
-    --tag-career: 45 45% 45%;
-    --tag-youth: 200 40% 45%;
-    --tag-parenting: 160 30% 45%;
-    --tag-faith: 25 50% 45%;
+    --tag-mind: 280 20% 45%;
+    --tag-relationships: 340 25% 45%;
+    --tag-career: 42 35% 45%;
+    --tag-youth: 200 30% 45%;
+    --tag-parenting: 160 20% 45%;
+    --tag-faith: 32 40% 45%;
   }
 }
 
@@ -121,7 +141,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
 
   html {
@@ -136,19 +157,31 @@
     }
   }
 
+  /* Premium typography hierarchy */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight;
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply tracking-tight;
+  }
+
+  /* Script/handwritten accent font */
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
   }
 }
 
 @layer utilities {
+  /* Premium card hover effect */
   .card-hover {
     @apply transition-all duration-500 hover:scale-[1.02];
-    box-shadow: 0 4px 20px -4px hsl(var(--shadow-soft) / 0.1);
+    box-shadow: 0 4px 20px -4px hsl(var(--shadow-soft) / 0.08);
   }
 
   .card-hover:hover {
-    box-shadow: 0 20px 40px -10px hsl(var(--shadow-soft) / 0.18);
+    box-shadow: 0 20px 40px -10px hsl(var(--shadow-soft) / 0.12);
   }
 
   .pill-nav {
@@ -157,16 +190,36 @@
 
   .floating-button {
     @apply w-12 h-12 rounded-full bg-[hsl(var(--cream)/0.9)] backdrop-blur-sm flex items-center justify-center text-[hsl(var(--cream-foreground))] hover:bg-[hsl(var(--cream))] hover:scale-110 transition-all duration-300;
-    box-shadow: 0 4px 12px -2px hsl(var(--shadow-soft) / 0.15);
+    box-shadow: 0 4px 12px -2px hsl(var(--shadow-soft) / 0.1);
   }
 
-  /* Saffron gradient backgrounds */
-  .bg-saffron-gradient {
-    background: linear-gradient(135deg, hsl(var(--saffron-light)) 0%, hsl(var(--gold-light)) 50%, hsl(var(--cream)) 100%);
+  /* Premium golden gradient button */
+  .btn-golden {
+    background: linear-gradient(135deg, hsl(var(--gold-gradient-start)) 0%, hsl(var(--gold-gradient-end)) 100%);
+    @apply text-white font-medium rounded-full shadow-lg transition-all duration-300;
+    box-shadow: 0 8px 24px -6px hsl(var(--gold) / 0.4);
+  }
+
+  .btn-golden:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -8px hsl(var(--gold) / 0.5);
+  }
+
+  /* Soft spiritual gradient backgrounds */
+  .bg-cream-gradient {
+    background: linear-gradient(180deg, hsl(var(--warm-white)) 0%, hsl(var(--cream)) 50%, hsl(var(--cream-dark)) 100%);
+  }
+
+  .bg-warm-gradient {
+    background: linear-gradient(135deg, hsl(var(--warm-white)) 0%, hsl(var(--cream)) 50%, hsl(var(--warm-beige)) 100%);
   }
 
   .bg-spiritual-gradient {
     background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--cream)) 100%);
+  }
+
+  .bg-section-alt {
+    background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--warm-beige)) 100%);
   }
 
   .text-saffron {
@@ -294,7 +347,7 @@
     animation-fill-mode: forwards;
   }
 
-  /* Category tags */
+  /* Category tags - softer */
   .tag-mind {
     @apply bg-[hsl(var(--tag-mind))] text-foreground;
   }
@@ -324,8 +377,8 @@
     border-image: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--gold))) 1;
   }
 
-  .glow-saffron {
-    box-shadow: 0 0 40px -10px hsl(var(--saffron) / 0.4);
+  .glow-gold {
+    box-shadow: 0 0 40px -10px hsl(var(--gold) / 0.3);
   }
 
   /* Premium scroll animations */
@@ -337,7 +390,6 @@
   /* Ensure animated items start visible but will be animated */
   [data-animate-item] {
     will-change: transform, opacity;
-    /* Don't set opacity: 0 here - GSAP will handle it */
   }
 
   /* Smooth transitions for interactive elements */
@@ -396,5 +448,26 @@
 
   .dropdown-enter {
     animation: dropdownSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Section background with blurred image */
+  .section-bg-blur {
+    position: relative;
+  }
+
+  .section-bg-blur::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(2px);
+    z-index: 0;
+  }
+
+  .section-bg-blur > * {
+    position: relative;
+    z-index: 1;
   }
 }
