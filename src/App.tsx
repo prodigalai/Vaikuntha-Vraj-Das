@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { initScrollAnimations, cleanupScrollAnimations } from "@/lib/scrollAnimations";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Journey from "./pages/Journey";
@@ -20,12 +23,52 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Component to handle scroll animations on route changes
+const ScrollAnimationHandler = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Cleanup previous animations
+    cleanupScrollAnimations();
+    
+    // Small delay to ensure DOM is ready and layout is complete
+    const timer = setTimeout(() => {
+      initScrollAnimations();
+      // Refresh ScrollTrigger after a brief moment to ensure proper calculations
+      setTimeout(() => {
+        if (typeof window !== "undefined") {
+          ScrollTrigger.refresh();
+        }
+      }, 200);
+    }, 150);
+
+    return () => {
+      clearTimeout(timer);
+      cleanupScrollAnimations();
+    };
+  }, [location.pathname]);
+
+  // Also initialize on mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      initScrollAnimations();
+    }, 300);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  return null;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollAnimationHandler />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />

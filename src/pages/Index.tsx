@@ -11,7 +11,7 @@ import foodDistributionImg from "@/assets/food-distribution-seva.jpg";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background animate-fade-in">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <main>
@@ -19,8 +19,11 @@ const Index = () => {
         <HeroSection />
 
         {/* Who is Vaikuntha Vraj Das */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="text-center space-y-6 animate-slide-up">
+        <section 
+          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32"
+          data-animate="fadeInUp"
+        >
+          <div className="text-center space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
               Who is Vaikuntha Vraj Das?
             </h2>
@@ -43,33 +46,40 @@ const Index = () => {
         <LatestMedia />
 
         {/* Welfare Highlight */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="rounded-3xl bg-gradient-to-br from-saffron-light/30 to-gold-light/40 p-8 md:p-12 lg:p-16">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-6">
-                <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+        <section 
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32"
+          data-animate="fadeIn"
+        >
+          <div className="rounded-3xl bg-gradient-to-br from-saffron-light/20 via-gold-light/15 to-background p-8 md:p-12 lg:p-16 border border-border/50 shadow-lg">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="space-y-6" data-animate="fadeInLeft">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium">
                   ISKCON Punjabi Bagh
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold">
                   Food Distribution & Community Welfare
                 </h2>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   Through our initiatives at ISKCON Punjabi Bagh, we serve thousands of meals daily to those in need. 
                   Join us in this sacred service of feeding the hungry and uplifting the community.
                 </p>
                 <a 
                   href="/serve" 
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/20 hover:scale-105"
                 >
                   Learn More & Volunteer
                 </a>
               </div>
-              <div className="relative aspect-video rounded-2xl overflow-hidden">
+              <div 
+                className="relative aspect-video rounded-2xl overflow-hidden shadow-xl"
+                data-animate="fadeInRight"
+              >
                 <img 
                   src={foodDistributionImg}
                   alt="ISKCON Punjabi Bagh Food Distribution"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
             </div>
           </div>

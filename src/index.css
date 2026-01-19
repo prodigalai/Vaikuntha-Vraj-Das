@@ -126,6 +126,14 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  /* Smooth scroll with momentum */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -318,5 +326,75 @@
 
   .glow-saffron {
     box-shadow: 0 0 40px -10px hsl(var(--saffron) / 0.4);
+  }
+
+  /* Premium scroll animations */
+  [data-animate],
+  [data-animate-group] {
+    will-change: transform, opacity;
+  }
+
+  /* Ensure animated items start visible but will be animated */
+  [data-animate-item] {
+    will-change: transform, opacity;
+    /* Don't set opacity: 0 here - GSAP will handle it */
+  }
+
+  /* Smooth transitions for interactive elements */
+  a, button {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Premium glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Enhanced card hover effects */
+  .card-hover {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Smooth image loading */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* Premium focus states */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Smooth text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Dropdown animations */
+  @keyframes dropdownSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .dropdown-enter {
+    animation: dropdownSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 }

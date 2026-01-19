@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, MapPin, Users, BookOpen, Mic } from "lucide-react";
-import aboutPortrait from "@/assets/vaikuntha-vraj-das-portrait.jpg";
+import aboutPortrait from "@/assets/vaikuntha-vraj-das-portrait.png";
 
 const About = () => {
   const stats = [
@@ -14,7 +14,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background animate-fade-in">
       <Header />
-      
+
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="mb-16 text-center space-y-6">
@@ -32,28 +32,28 @@ const About = () => {
         {/* Bio Section */}
         <section className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden animate-scale-in">
-            <img 
+            <img
               src={aboutPortrait}
               alt="Vaikuntha Vraj Das - Spiritual Coach"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
           </div>
-          
+
           <div className="space-y-6 animate-slide-up stagger-2">
             <h2 className="text-3xl font-bold">A Life Dedicated to Service</h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
-                Vaikuntha Vraj Das is a celibate monk, spiritual coach, and mentor dedicated to sharing 
-                practical wisdom from the Bhagavad Gita and other Vedic scriptures. Based in Delhi, India, 
+                Vaikuntha Vraj Das is a celibate monk, spiritual coach, and mentor dedicated to sharing
+                practical wisdom from the Bhagavad Gita and other Vedic scriptures. Based in Delhi, India,
                 he currently serves as the Co-President of ISKCON Punjabi Bagh.
               </p>
               <p>
-                He leads youth-focused initiatives, mentoring students and young professionals—especially 
+                He leads youth-focused initiatives, mentoring students and young professionals—especially
                 from premier institutions like IITs and NITs—to apply spiritual principles in modern life.
               </p>
               <p>
-                His teachings have been featured on Speaking Tree and other reputed platforms, reaching 
+                His teachings have been featured on Speaking Tree and other reputed platforms, reaching
                 thousands seeking practical spiritual solutions for daily challenges.
               </p>
             </div>
@@ -147,7 +147,7 @@ const About = () => {
               <span className="text-sm font-medium text-center">Speaking Tree</span>
               <span className="text-xs text-muted-foreground">Times of India</span>
             </div>
-            
+
             {/* Hare Krsna TV */}
             <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
@@ -156,7 +156,7 @@ const About = () => {
               <span className="text-sm font-medium text-center">Hare Krsna TV</span>
               <span className="text-xs text-muted-foreground">ISKCON Media</span>
             </div>
-            
+
             {/* IITs */}
             <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
@@ -165,7 +165,7 @@ const About = () => {
               <span className="text-sm font-medium text-center">IITs</span>
               <span className="text-xs text-muted-foreground">Delhi, Bombay, Kanpur</span>
             </div>
-            
+
             {/* NITs */}
             <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-600 to-emerald-700 flex items-center justify-center">
@@ -174,7 +174,7 @@ const About = () => {
               <span className="text-sm font-medium text-center">NITs</span>
               <span className="text-xs text-muted-foreground">Allahabad, Trichy +</span>
             </div>
-            
+
             {/* Corporate */}
             <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
@@ -183,7 +183,7 @@ const About = () => {
               <span className="text-sm font-medium text-center">Corporates</span>
               <span className="text-xs text-muted-foreground">Wellness Programs</span>
             </div>
-            
+
             {/* YouTube */}
             <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/50 w-full">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center">

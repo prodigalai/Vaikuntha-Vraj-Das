@@ -9,28 +9,49 @@ const caseStudies = [
 
 const CaseStudiesPreview = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-muted/30">
-      <div className="flex items-center justify-between mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold">Featured Case Studies</h2>
-        <Link to="/case-studies" className="hidden md:flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all">
-          View All <ArrowRight className="w-4 h-4" />
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 bg-muted/20">
+      <div className="flex items-center justify-between mb-12" data-animate="fadeInUp">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Featured Case Studies</h2>
+        <Link 
+          to="/case-studies" 
+          className="hidden md:flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all duration-300 group"
+        >
+          View All <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div 
+        className="grid md:grid-cols-3 gap-6"
+        data-animate-group="fadeInUp"
+        data-stagger-delay="0.15"
+      >
         {caseStudies.map((study, index) => (
-          <Link to={`/case-studies/${study.slug}`} key={index} className={`group rounded-2xl overflow-hidden bg-card card-hover animate-slide-up stagger-${index + 1}`}>
-            <div className="aspect-video overflow-hidden">
-              <img src={study.image} alt={study.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <Link 
+            to={`/case-studies/${study.slug}`} 
+            key={index} 
+            className="group rounded-2xl overflow-hidden bg-card border border-border/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:scale-[1.02] hover:border-primary/20"
+            data-animate-item
+          >
+            <div className="aspect-video overflow-hidden relative">
+              <img 
+                src={study.image} 
+                alt={study.title} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="p-5">
-              <span className="text-xs text-primary font-medium uppercase">{study.category}</span>
-              <h3 className="text-lg font-semibold mt-1 group-hover:text-primary transition-colors">{study.title}</h3>
+              <span className="text-xs text-primary font-medium uppercase tracking-wide">{study.category}</span>
+              <h3 className="text-lg font-semibold mt-2 group-hover:text-primary transition-colors duration-300">{study.title}</h3>
             </div>
           </Link>
         ))}
       </div>
-      <Link to="/case-studies" className="md:hidden flex items-center justify-center gap-2 text-primary font-medium mt-8">
-        View All Case Studies <ArrowRight className="w-4 h-4" />
+      <Link 
+        to="/case-studies" 
+        className="md:hidden flex items-center justify-center gap-2 text-primary font-medium mt-8 group"
+        data-animate="fadeInUp"
+      >
+        View All Case Studies <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </Link>
     </section>
   );
