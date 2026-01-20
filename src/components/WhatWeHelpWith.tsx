@@ -1,6 +1,6 @@
 import { Brain, Heart, Briefcase, Leaf, Target, CloudRain, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import lotusBg from "@/assets/bg2.avif";
+import lotusBg from "@/assets/lotus_pond_bg.png";
 
 const topics = [
   {
