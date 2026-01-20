@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBackground from "@/components/PageBackground";
+import lotusBg from "@/assets/lotus_pond_bg.png";
 import { useParams, Link } from "react-router-dom";
 import { BookOpen, Play, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -99,14 +101,15 @@ const teachingCategories = [
 const Teachings = () => {
   const { category } = useParams();
 
-  const selectedCategory = category 
-    ? teachingCategories.find(c => c.id === category) 
+  const selectedCategory = category
+    ? teachingCategories.find(c => c.id === category)
     : null;
 
   return (
-    <div className="min-h-screen bg-background animate-fade-in">
+    <div className="min-h-screen bg-transparent relative">
+      <PageBackground image={lotusBg} opacity={0.20} />
       <Header />
-      
+
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="mb-16 text-center space-y-6">
@@ -117,8 +120,8 @@ const Teachings = () => {
             {selectedCategory ? selectedCategory.title : "Scriptural Wisdom"}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto animate-slide-up stagger-1">
-            {selectedCategory 
-              ? selectedCategory.description 
+            {selectedCategory
+              ? selectedCategory.description
               : "Explore timeless teachings from Vedic scriptures, presented for modern understanding and practical application."
             }
           </p>
@@ -126,11 +129,10 @@ const Teachings = () => {
 
         {/* Category Navigation */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          <Link 
+          <Link
             to="/teachings"
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-              !category ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80'
-            }`}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${!category ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80'
+              }`}
           >
             All
           </Link>
@@ -138,9 +140,8 @@ const Teachings = () => {
             <Link
               key={cat.id}
               to={`/teachings/${cat.id}`}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                category === cat.id ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80'
-              }`}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${category === cat.id ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80'
+                }`}
             >
               {cat.title}
             </Link>
@@ -151,14 +152,14 @@ const Teachings = () => {
         {!selectedCategory && (
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {teachingCategories.map((cat, index) => (
-              <Link 
-                key={cat.id} 
+              <Link
+                key={cat.id}
                 to={`/teachings/${cat.id}`}
                 className={`group rounded-3xl overflow-hidden bg-card card-hover animate-slide-up stagger-${Math.min(index + 1, 4)}`}
               >
                 <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src={cat.image} 
+                  <img
+                    src={cat.image}
                     alt={cat.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -180,8 +181,8 @@ const Teachings = () => {
           <>
             {/* Hero Image */}
             <div className="relative aspect-[21/9] rounded-3xl overflow-hidden mb-12 animate-scale-in">
-              <img 
-                src={selectedCategory.image} 
+              <img
+                src={selectedCategory.image}
                 alt={selectedCategory.title}
                 className="w-full h-full object-cover"
               />
@@ -196,7 +197,7 @@ const Teachings = () => {
               </h2>
               <div className="grid md:grid-cols-3 gap-4">
                 {selectedCategory.startHere.map((item, index) => (
-                  <a 
+                  <a
                     key={index}
                     href={`https://www.youtube.com/watch?v=${item.videoId}`}
                     target="_blank"
@@ -204,7 +205,7 @@ const Teachings = () => {
                     className="p-5 rounded-2xl bg-card border border-border hover:border-primary transition-colors cursor-pointer group"
                   >
                     <div className="relative aspect-video rounded-lg overflow-hidden mb-3">
-                      <img 
+                      <img
                         src={`https://i.ytimg.com/vi/${item.videoId}/mqdefault.jpg`}
                         alt={item.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform"
@@ -228,7 +229,7 @@ const Teachings = () => {
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {selectedCategory.playlists.map((playlist, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="rounded-2xl bg-gradient-to-br from-saffron-light/20 to-gold-light/20 border border-border hover:shadow-lg transition-all overflow-hidden"
                   >
@@ -248,7 +249,7 @@ const Teachings = () => {
                           rel="noopener noreferrer"
                           className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors text-sm"
                         >
-                          <img 
+                          <img
                             src={`https://i.ytimg.com/vi/${video.id}/default.jpg`}
                             alt={video.title}
                             className="w-16 h-10 object-cover rounded"

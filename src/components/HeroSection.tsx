@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import heroPortrait from "@/assets/vaikuntha-vraj-das-portrait.png";
+import heroPortrait from "@/assets/hero Background Removed.png";
 import blurredCityBg from "@/assets/blurred-cityscape-bg.jpg";
 
 if (typeof window !== "undefined") {
@@ -19,24 +19,33 @@ const HeroSection = () => {
   useEffect(() => {
     if (!heroRef.current || !contentRef.current || !imageRef.current) return;
 
-    // Animate content on mount
-    const tl = gsap.timeline();
-    
-    tl.from(contentRef.current.children, {
+    // Animate content (Right Side) on mount
+    gsap.from(contentRef.current, {
       opacity: 0,
-      y: 40,
+      x: 60,
+      duration: 1.2,
+      ease: "power3.out",
+      delay: 0.3,
+    });
+
+    // Staggered children of content
+    gsap.from(contentRef.current.children, {
+      opacity: 0,
+      y: 20,
       duration: 1,
       stagger: 0.15,
       ease: "power2.out",
+      delay: 0.5,
     });
 
-    // Animate image with scale effect
+    // Animate image (Left Side) with fade-left effect
     gsap.from(imageRef.current, {
       opacity: 0,
-      scale: 0.95,
-      duration: 1.2,
-      ease: "power2.out",
-      delay: 0.3,
+      x: -60,
+      scale: 0.98,
+      duration: 1.5,
+      ease: "power3.out",
+      delay: 0.2,
     });
 
     // Parallax effect on scroll
@@ -65,12 +74,12 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={heroRef}
       className="relative min-h-[90vh] flex items-center overflow-hidden"
     >
       {/* Blurred cityscape background */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${blurredCityBg})`,
@@ -79,13 +88,13 @@ const HeroSection = () => {
           opacity: 0.4,
         }}
       />
-      
+
       {/* Warm cream gradient overlay */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[hsl(40,40%,96%)] via-[hsl(40,40%,96%)/80%] to-[hsl(38,35%,92%)/95%]" />
-      
+
       {/* Soft radial glow */}
       <div className="absolute inset-0 z-0 opacity-30 bg-[radial-gradient(ellipse_at_30%_50%,hsl(38,60%,85%),transparent_60%)]" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 md:py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left side - Portrait */}
@@ -110,20 +119,20 @@ const HeroSection = () => {
             <h1 className="font-script text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground leading-none">
               Vaikuntha Vraj Das
             </h1>
-            
+
             {/* Description paragraph */}
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
-              It's not every day that one stumbles upon a monk's website. I want to thank you for being here! 
-              I have spent over 13 years as a practicing monk, devoted to understanding and decoding 
-              the many aspects of life. Along the way, I've discovered that wisdom grows when it's shared. 
-              That's why I speak, write, and connect with the simple hope that the lessons life has taught me 
+              It's not every day that one stumbles upon a monk's website. I want to thank you for being here!
+              I have spent over 13 years as a practicing monk, devoted to understanding and decoding
+              the many aspects of life. Along the way, I've discovered that wisdom grows when it's shared.
+              That's why I speak, write, and connect with the simple hope that the lessons life has taught me
               might illuminate someone else's path, too.
             </p>
-            
+
             {/* CTA Button - warm golden gradient */}
             <div className="pt-4">
               <Link to="/guidance">
-                <Button 
+                <Button
                   className="btn-golden px-10 py-7 text-lg font-medium"
                 >
                   Get Guidance

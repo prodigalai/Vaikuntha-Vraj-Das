@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBackground from "@/components/PageBackground";
+import arcBg from "@/assets/vedic_architecture_bg.png";
 import { Mail, MapPin, Users, BookOpen, Mic } from "lucide-react";
 import aboutPortrait from "@/assets/vaikuntha-vraj-das-portrait.png";
 
@@ -12,7 +14,8 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background animate-fade-in">
+    <div className="min-h-screen bg-transparent relative">
+      <PageBackground image={arcBg} opacity={0.25} />
       <Header />
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

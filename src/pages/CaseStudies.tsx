@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Filter, Brain, Heart, Briefcase, Users, Baby, Sparkles } from "lucide-react";
 import { useState } from "react";
+import PageBackground from "@/components/PageBackground";
+import lotusBg from "@/assets/lotus_pond_bg.png";
 
 const categories = [
   { id: "all", label: "All", icon: Filter },
@@ -127,9 +129,10 @@ const CaseStudies = () => {
   const featuredStudy = caseStudies.find(s => s.featured);
 
   return (
-    <div className="min-h-screen bg-background animate-fade-in">
+    <div className="min-h-screen bg-transparent relative animate-fade-in">
+      <PageBackground image={lotusBg} opacity={0.4} />
       <Header />
-      
+
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="mb-12 text-center space-y-6">
@@ -146,14 +149,14 @@ const CaseStudies = () => {
 
         {/* Featured Case Study */}
         {featuredStudy && (
-          <Link 
+          <Link
             to={`/case-studies/${featuredStudy.slug}`}
             className="block mb-16 group"
           >
             <div className="relative rounded-3xl overflow-hidden animate-scale-in">
               <div className="aspect-[21/9]">
-                <img 
-                  src={featuredStudy.image} 
+                <img
+                  src={featuredStudy.image}
                   alt={featuredStudy.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -182,11 +185,10 @@ const CaseStudies = () => {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    selectedCategory === cat.id
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted hover:bg-muted/80'
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === cat.id
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-muted hover:bg-muted/80'
+                    }`}
                 >
                   <Icon className="w-4 h-4" />
                   {cat.label}
@@ -217,14 +219,14 @@ const CaseStudies = () => {
         {/* Case Studies Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredStudies.filter(s => !s.featured).map((study, index) => (
-            <Link 
+            <Link
               key={study.slug}
               to={`/case-studies/${study.slug}`}
               className={`group rounded-2xl overflow-hidden bg-card card-hover animate-slide-up stagger-${Math.min(index + 1, 6)}`}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img 
-                  src={study.image} 
+                <img
+                  src={study.image}
                   alt={study.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

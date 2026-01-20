@@ -8,22 +8,22 @@ const Footer = () => {
     <footer className="mt-20 relative overflow-hidden">
       {/* Warm cream/beige gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(38,35%,88%)] via-[hsl(35,40%,85%)] to-[hsl(32,45%,82%)]" />
-      
+
       {/* Blurred cityscape background */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${blurredCityBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.12,
+          opacity: 0.7,
           transform: 'scaleX(-1)',
         }}
       />
-      
+
       {/* Soft radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(42,50%,90%)/50%,transparent_60%)]" />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -115,39 +115,39 @@ const Footer = () => {
           <div>
             <h3 className="font-serif font-semibold text-lg mb-6 text-foreground">Connect</h3>
             <div className="flex gap-3 mb-6">
-              <a 
-                href="https://www.youtube.com/@vaikunthavrajdas" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.youtube.com/@vaikunthavrajdas"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-primary/10 hover:scale-110 hover:border-primary/30 transition-all duration-300 group p-2 shadow-sm"
               >
-                <img 
-                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-youtube-3d-icon-png-download-7516827.png" 
-                  alt="YouTube" 
+                <img
+                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-youtube-3d-icon-png-download-7516827.png"
+                  alt="YouTube"
                   className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                 />
               </a>
-              <a 
-                href="https://www.instagram.com/vaikunthavrajdas/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.instagram.com/vaikunthavrajdas/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-primary/10 hover:scale-110 hover:border-primary/30 transition-all duration-300 group p-2 shadow-sm"
               >
-                <img 
-                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-instagram-logo-3d-icon-png-download-12257263.png" 
-                  alt="Instagram" 
+                <img
+                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-instagram-logo-3d-icon-png-download-12257263.png"
+                  alt="Instagram"
                   className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                 />
               </a>
-              <a 
-                href="https://www.facebook.com/vaikunthavrajdas/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.facebook.com/vaikunthavrajdas/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-primary/10 hover:scale-110 hover:border-primary/30 transition-all duration-300 group p-2 shadow-sm"
               >
-                <img 
-                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-facebook-logo-3d-icon-png-download-12257268.png" 
-                  alt="Facebook" 
+                <img
+                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-facebook-logo-3d-icon-png-download-12257268.png"
+                  alt="Facebook"
                   className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                 />
               </a>
@@ -165,15 +165,15 @@ const Footer = () => {
               © 2026 <span className="font-script text-primary">Vaikuntha Vraj Das</span>. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <Link 
-                to="/privacy" 
+              <Link
+                to="/privacy"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Privacy Policy
               </Link>
               <span className="w-1 h-1 rounded-full bg-primary/30" />
-              <Link 
-                to="/terms" 
+              <Link
+                to="/terms"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Terms of Service

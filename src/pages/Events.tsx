@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBackground from "@/components/PageBackground";
+import arcBg from "@/assets/vedic_architecture_bg.png";
 import { Calendar, MapPin, Clock, Users, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import spiritualEventGathering from "@/assets/spiritual-event-gathering.jpg";
@@ -68,9 +70,10 @@ const pastEvents = [
 
 const Events = () => {
   return (
-    <div className="min-h-screen bg-background animate-fade-in">
+    <div className="min-h-screen bg-transparent relative">
+      <PageBackground image={arcBg} opacity={0.12} />
       <Header />
-      
+
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="mb-16 text-center space-y-6">
@@ -90,7 +93,7 @@ const Events = () => {
           <h2 className="text-2xl font-bold mb-8">Upcoming Events</h2>
           <div className="space-y-6">
             {upcomingEvents.map((event, index) => (
-              <div 
+              <div
                 key={event.id}
                 className={`rounded-2xl bg-card p-6 md:p-8 hover:shadow-lg transition-shadow animate-slide-up stagger-${Math.min(index + 1, 3)}`}
               >
@@ -150,13 +153,13 @@ const Events = () => {
           <h2 className="text-2xl font-bold mb-8">Past Events Gallery</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {pastEvents.map((event) => (
-              <div 
+              <div
                 key={event.id}
                 className="group rounded-2xl overflow-hidden bg-card card-hover"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={event.image} 
+                  <img
+                    src={event.image}
                     alt={event.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />

@@ -1,8 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBackground from "@/components/PageBackground";
+import cityBg from "@/assets/blurred-cityscape-bg.jpg";
 import { useParams } from "react-router-dom";
 import { Play, Headphones, Film, Radio, Filter, Instagram, Facebook, Youtube, ExternalLink, Calendar, Eye } from "lucide-react";
 import { useState } from "react";
+import natureBg from "@/assets/spiritual_nature_bg.png";
 
 const mediaTypes = [
   { id: "all", label: "All Media", icon: Filter },
@@ -76,9 +79,10 @@ const Media = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent relative">
+      <PageBackground image={cityBg} opacity={0.65} />
       <Header />
-      
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <section className="pt-12 pb-12 md:pt-16 md:pb-16">
@@ -97,16 +101,16 @@ const Media = () => {
 
           {/* Platform Links - Premium Design */}
           <div className="flex flex-wrap justify-center gap-4 mt-8" data-animate="fadeInUp">
-            <a 
-              href="https://www.youtube.com/@vaikunthavrajdas" 
-              target="_blank" 
+            <a
+              href="https://www.youtube.com/@vaikunthavrajdas"
+              target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 px-6 py-4 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:scale-105"
             >
               <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors p-2">
-                <img 
-                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-youtube-3d-icon-png-download-7516827.png" 
-                  alt="YouTube" 
+                <img
+                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-youtube-3d-icon-png-download-7516827.png"
+                  alt="YouTube"
                   className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                 />
               </div>
@@ -116,16 +120,16 @@ const Media = () => {
               </div>
               <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-red-500 transition-colors ml-2" />
             </a>
-            <a 
-              href="https://www.instagram.com/vaikunthavrajdas/" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/vaikunthavrajdas/"
+              target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 px-6 py-4 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-pink-500/50 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300 hover:scale-105"
             >
               <div className="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center group-hover:bg-pink-500/20 transition-colors p-2">
-                <img 
-                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-instagram-logo-3d-icon-png-download-12257263.png" 
-                  alt="Instagram" 
+                <img
+                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-instagram-logo-3d-icon-png-download-12257263.png"
+                  alt="Instagram"
                   className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                 />
               </div>
@@ -135,16 +139,16 @@ const Media = () => {
               </div>
               <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-pink-500 transition-colors ml-2" />
             </a>
-            <a 
-              href="https://www.facebook.com/vaikunthavrajdas/" 
-              target="_blank" 
+            <a
+              href="https://www.facebook.com/vaikunthavrajdas/"
+              target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 px-6 py-4 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:scale-105"
             >
               <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors p-2">
-                <img 
-                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-facebook-logo-3d-icon-png-download-12257268.png" 
-                  alt="Facebook" 
+                <img
+                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-facebook-logo-3d-icon-png-download-12257268.png"
+                  alt="Facebook"
                   className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                 />
               </div>
@@ -195,18 +199,18 @@ const Media = () => {
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-border/50">
-                <a 
-                  href="https://www.youtube.com/@vaikunthavrajdas" 
-                  target="_blank" 
+                <a
+                  href="https://www.youtube.com/@vaikunthavrajdas"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/20 hover:scale-105"
                 >
                   <Youtube className="w-5 h-5" />
                   Visit Channel
                 </a>
-                <a 
-                  href="https://www.youtube.com/watch?v=dAbfaizn8C8" 
-                  target="_blank" 
+                <a
+                  href="https://www.youtube.com/watch?v=dAbfaizn8C8"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border hover:border-primary/50 font-medium transition-all duration-300 hover:scale-105"
                 >
@@ -234,11 +238,10 @@ const Media = () => {
                   <button
                     key={t.id}
                     onClick={() => setSelectedType(t.id)}
-                    className={`group flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                      selectedType === t.id
-                        ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
-                        : 'bg-card border border-border/50 hover:border-primary/50 hover:bg-card/80'
-                    }`}
+                    className={`group flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${selectedType === t.id
+                      ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
+                      : 'bg-card border border-border/50 hover:border-primary/50 hover:bg-card/80'
+                      }`}
                   >
                     <Icon className={`w-4 h-4 ${selectedType === t.id ? '' : 'text-muted-foreground group-hover:text-primary'}`} />
                     {t.label}
@@ -254,11 +257,10 @@ const Media = () => {
               <button
                 key={topic.value}
                 onClick={() => setSelectedTopic(topic.value)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  selectedTopic === topic.value
-                    ? 'bg-primary/15 text-primary border border-primary/30 font-semibold'
-                    : 'bg-card/50 border border-border/50 hover:border-primary/30 hover:bg-card text-foreground'
-                }`}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedTopic === topic.value
+                  ? 'bg-primary/15 text-primary border border-primary/30 font-semibold'
+                  : 'bg-card/50 border border-border/50 hover:border-primary/30 hover:bg-card text-foreground'
+                  }`}
               >
                 {topic.label}
               </button>
@@ -277,7 +279,7 @@ const Media = () => {
               <p className="text-muted-foreground">Latest spiritual insights and wisdom</p>
             </div>
           </div>
-          <div 
+          <div
             className="grid md:grid-cols-3 gap-6"
             data-animate-group="fadeInUp"
             data-stagger-delay="0.15"
@@ -332,7 +334,7 @@ const Media = () => {
           <section className="mb-20" data-animate-group="fadeInUp" data-stagger-delay="0.1">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredMedia.map((item) => (
-                <div 
+                <div
                   key={item.id}
                   className="group relative rounded-2xl overflow-hidden bg-card border border-border/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] hover:border-primary/30"
                   data-animate-item
@@ -351,7 +353,7 @@ const Media = () => {
                       />
                     ) : (
                       <>
-                        <img 
+                        <img
                           src={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
                           alt={item.title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -359,7 +361,7 @@ const Media = () => {
                             (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
                           }}
                         />
-                        <button 
+                        <button
                           onClick={() => setPlayingVideo(item.id)}
                           className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm"
                         >
@@ -426,9 +428,9 @@ const Media = () => {
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 Subscribe to our YouTube channel for weekly discourses on Bhagavad Gita, spiritual wisdom, and practical guidance for modern life.
               </p>
-              <a 
-                href="https://www.youtube.com/@vaikunthavrajdas?sub_confirmation=1" 
-                target="_blank" 
+              <a
+                href="https://www.youtube.com/@vaikunthavrajdas?sub_confirmation=1"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-red-600 text-white font-semibold hover:bg-red-700 transition-all duration-300 shadow-xl shadow-red-600/30 hover:scale-105"
               >

@@ -1,12 +1,3 @@
-@import '@fontsource/playfair-display/400.css';
-@import '@fontsource/playfair-display/500.css';
-@import '@fontsource/playfair-display/600.css';
-@import '@fontsource/playfair-display/700.css';
-@import '@fontsource/dancing-script/400.css';
-@import '@fontsource/dancing-script/500.css';
-@import '@fontsource/dancing-script/600.css';
-@import '@fontsource/dancing-script/700.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,11 +56,11 @@
     --warm-beige: 35 35% 90%;
     --surface-elevated: 40 40% 96%;
     --shadow-soft: 30 30% 20%;
-    
+
     /* Premium golden gradient for buttons */
     --gold-gradient-start: 42 65% 55%;
     --gold-gradient-end: 35 60% 45%;
-    
+
     /* Category colors - softer, muted */
     --tag-mind: 280 25% 78%;
     --tag-relationships: 340 30% 78%;
@@ -158,7 +149,12 @@
   }
 
   /* Premium typography hierarchy */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Playfair Display', Georgia, serif;
     @apply tracking-tight;
   }
@@ -174,6 +170,7 @@
 }
 
 @layer utilities {
+
   /* Premium card hover effect */
   .card-hover {
     @apply transition-all duration-500 hover:scale-[1.02];
@@ -243,6 +240,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -253,6 +251,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -264,6 +263,7 @@
       opacity: 0;
       transform: translateY(-20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -275,6 +275,7 @@
       opacity: 0;
       transform: scale(0.95);
     }
+
     to {
       opacity: 1;
       transform: scale(1);
@@ -282,9 +283,12 @@
   }
 
   @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-10px);
     }
@@ -393,7 +397,8 @@
   }
 
   /* Smooth transitions for interactive elements */
-  a, button {
+  a,
+  button {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -440,6 +445,7 @@
       opacity: 0;
       transform: translateY(-10px) scale(0.95);
     }
+
     to {
       opacity: 1;
       transform: translateY(0) scale(1);
@@ -466,7 +472,7 @@
     z-index: 0;
   }
 
-  .section-bg-blur > * {
+  .section-bg-blur>* {
     position: relative;
     z-index: 1;
   }

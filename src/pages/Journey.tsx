@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBackground from "@/components/PageBackground";
+import gardenBg from "@/assets/morning_meditation_bg.png";
 import { GraduationCap, Heart, Users, BookOpen, Mic, Award } from "lucide-react";
 import journeyBanner from "@/assets/spiritual-journey-banner.jpg";
 
@@ -63,9 +65,10 @@ const Journey = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background animate-fade-in">
+    <div className="min-h-screen bg-transparent relative">
+      <PageBackground image={gardenBg} opacity={0.25} />
       <Header />
-      
+
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="mb-16 text-center space-y-6">
@@ -82,7 +85,7 @@ const Journey = () => {
 
         {/* Hero Image */}
         <div className="relative aspect-[21/9] rounded-3xl overflow-hidden mb-20 animate-scale-in">
-          <img 
+          <img
             src={journeyBanner}
             alt="Spiritual journey"
             className="w-full h-full object-cover"
@@ -101,18 +104,17 @@ const Journey = () => {
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-border transform md:-translate-x-1/2" />
-            
+
             <div className="space-y-12">
               {milestones.map((milestone, index) => {
                 const Icon = milestone.icon;
                 const isEven = index % 2 === 0;
-                
+
                 return (
-                  <div 
+                  <div
                     key={index}
-                    className={`relative flex items-center gap-8 ${
-                      isEven ? 'md:flex-row' : 'md:flex-row-reverse'
-                    }`}
+                    className={`relative flex items-center gap-8 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                      }`}
                   >
                     {/* Content */}
                     <div className={`flex-1 ml-20 md:ml-0 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
@@ -120,12 +122,12 @@ const Journey = () => {
                       <h3 className="text-xl font-bold mt-1 mb-2">{milestone.title}</h3>
                       <p className="text-muted-foreground">{milestone.description}</p>
                     </div>
-                    
+
                     {/* Icon */}
                     <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-16 h-16 rounded-full bg-card border-4 border-background flex items-center justify-center shadow-lg z-10">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
-                    
+
                     {/* Spacer for alternating layout */}
                     <div className="hidden md:block flex-1" />
                   </div>
@@ -152,7 +154,7 @@ const Journey = () => {
         <section className="text-center py-16">
           <div className="max-w-4xl mx-auto">
             <blockquote className="text-3xl md:text-4xl font-serif italic text-foreground leading-relaxed">
-              "I left engineering to become a spiritual engineer—helping people debug their minds 
+              "I left engineering to become a spiritual engineer—helping people debug their minds
               and optimize their lives for lasting happiness."
             </blockquote>
             <p className="mt-8 text-primary font-medium">— Vaikuntha Vraj Das</p>

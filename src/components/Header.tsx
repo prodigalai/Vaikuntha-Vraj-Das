@@ -14,7 +14,6 @@ const Header = () => {
   const activitiesDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Default to light theme
     const savedTheme = localStorage.getItem("theme");
     const shouldBeDark = savedTheme === "dark";
 
@@ -34,7 +33,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
@@ -103,22 +101,27 @@ const Header = () => {
     items.some(item => location.pathname.startsWith(item.path));
 
   return (
-    <header className={`sticky top-0 z-50 py-2 sm:py-4 transition-all duration-500 ${isScrolled ? 'backdrop-blur-xl bg-background/80 shadow-sm' : ''}`}>
+    <header className={`sticky top-0 z-50 py-3 sm:py-4 transition-all duration-500 ${isScrolled ? 'backdrop-blur-xl bg-cream/90 dark:bg-background/90 shadow-soft' : ''}`}>
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16 pill-nav px-4 sm:px-6 border border-border/50">
+        <div className="flex items-center justify-between h-14 sm:h-16 rounded-full bg-card/80 backdrop-blur-md px-5 sm:px-7 border border-border/30 shadow-soft">
           {/* Logo + Name */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
             <img
               src={Logo}
               alt="Logo"
-              className="w-10 h-10 sm:w-12 sm:h-12"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full transition-transform duration-300 group-hover:scale-105"
             />
 
-            <span className="hidden sm:block text-lg sm:text-xl font-bold font-serif italic tracking-tight">
-              Vaikuntha Vraj Das
-            </span>
+            <div className="hidden sm:flex flex-col leading-tight">
+              <span className="text-lg sm:text-xl font-script text-primary tracking-wide">
+                Vaikuntha Vraj Das
+              </span>
+              <span className="text-[10px] text-muted-foreground/70 uppercase tracking-widest font-medium">
+                Spiritual Guide
+              </span>
+            </div>
 
-            <span className="sm:hidden text-base font-bold font-serif">
+            <span className="sm:hidden text-lg font-script text-primary">
               VVD
             </span>
           </Link>
@@ -130,9 +133,9 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium rounded-full px-4 py-2 transition-all ${isActive(item.path)
-                  ? 'bg-primary text-primary-foreground'
-                  : 'hover:bg-muted/60'
+                className={`text-sm font-medium rounded-full px-4 py-2.5 transition-all duration-300 ${isActive(item.path)
+                  ? 'bg-primary/15 text-primary font-semibold'
+                  : 'text-foreground/80 hover:bg-muted/50 hover:text-foreground'
                   }`}
               >
                 {item.name}
@@ -144,9 +147,9 @@ const Header = () => {
               <button
                 onClick={() => setOpenDropdown(openDropdown === "resources" ? null : "resources")}
                 onMouseEnter={() => setOpenDropdown("resources")}
-                className={`text-sm font-medium rounded-full px-4 py-2 transition-all duration-300 flex items-center gap-1.5 group ${isDropdownActive(resourcesDropdown.items)
-                  ? 'bg-primary text-primary-foreground'
-                  : 'hover:bg-muted/60'
+                className={`text-sm font-medium rounded-full px-4 py-2.5 transition-all duration-300 flex items-center gap-1.5 ${isDropdownActive(resourcesDropdown.items)
+                  ? 'bg-primary/15 text-primary font-semibold'
+                  : 'text-foreground/80 hover:bg-muted/50 hover:text-foreground'
                   }`}
               >
                 {resourcesDropdown.name}
@@ -154,26 +157,28 @@ const Header = () => {
               </button>
               {openDropdown === "resources" && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-56 rounded-2xl bg-card border border-border shadow-2xl py-2 z-50 overflow-hidden dropdown-enter"
+                  className="absolute top-full left-0 mt-2 w-56 rounded-2xl bg-card/95 backdrop-blur-lg border border-border/40 shadow-lg py-2 z-50 overflow-hidden dropdown-enter"
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent" />
-                  {resourcesDropdown.items.map((item, index) => {
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron/5 via-transparent to-gold/5" />
+                  {resourcesDropdown.items.map((item) => {
                     const Icon = item.icon;
                     return (
                       <Link
                         key={item.name}
                         to={item.path}
                         onClick={() => setOpenDropdown(null)}
-                        className={`group relative flex items-center gap-3 px-4 py-2.5 mx-1 rounded-xl text-sm transition-all duration-300 ${isActive(item.path)
-                          ? 'bg-primary/15 text-primary font-medium shadow-sm'
-                          : 'hover:bg-muted/70 text-foreground'
+                        className={`group relative flex items-center gap-3 px-4 py-3 mx-1.5 rounded-xl text-sm transition-all duration-300 ${isActive(item.path)
+                          ? 'bg-primary/10 text-primary font-medium'
+                          : 'hover:bg-muted/60 text-foreground/80 hover:text-foreground'
                           }`}
                       >
-                        <Icon className={`w-4 h-4 transition-transform duration-300 ${isActive(item.path) ? 'text-primary' : 'text-muted-foreground group-hover:text-primary group-hover:scale-110'}`} />
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${isActive(item.path) ? 'bg-primary/20' : 'bg-muted/50 group-hover:bg-primary/10'}`}>
+                          <Icon className={`w-4 h-4 transition-all duration-300 ${isActive(item.path) ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`} />
+                        </div>
                         <span className="flex-1">{item.name}</span>
                         {isActive(item.path) && (
-                          <div className="absolute right-2 w-1.5 h-1.5 rounded-full bg-primary" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                         )}
                       </Link>
                     );
@@ -187,9 +192,9 @@ const Header = () => {
               <button
                 onClick={() => setOpenDropdown(openDropdown === "activities" ? null : "activities")}
                 onMouseEnter={() => setOpenDropdown("activities")}
-                className={`text-sm font-medium rounded-full px-4 py-2 transition-all duration-300 flex items-center gap-1.5 group ${isDropdownActive(activitiesDropdown.items)
-                  ? 'bg-primary text-primary-foreground'
-                  : 'hover:bg-muted/60'
+                className={`text-sm font-medium rounded-full px-4 py-2.5 transition-all duration-300 flex items-center gap-1.5 ${isDropdownActive(activitiesDropdown.items)
+                  ? 'bg-primary/15 text-primary font-semibold'
+                  : 'text-foreground/80 hover:bg-muted/50 hover:text-foreground'
                   }`}
               >
                 {activitiesDropdown.name}
@@ -197,26 +202,28 @@ const Header = () => {
               </button>
               {openDropdown === "activities" && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-48 rounded-2xl bg-card border border-border shadow-2xl py-2 z-50 overflow-hidden dropdown-enter"
+                  className="absolute top-full left-0 mt-2 w-52 rounded-2xl bg-card/95 backdrop-blur-lg border border-border/40 shadow-lg py-2 z-50 overflow-hidden dropdown-enter"
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent" />
-                  {activitiesDropdown.items.map((item, index) => {
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron/5 via-transparent to-gold/5" />
+                  {activitiesDropdown.items.map((item) => {
                     const Icon = item.icon;
                     return (
                       <Link
                         key={item.name}
                         to={item.path}
                         onClick={() => setOpenDropdown(null)}
-                        className={`group relative flex items-center gap-3 px-4 py-2.5 mx-1 rounded-xl text-sm transition-all duration-300 ${isActive(item.path)
-                          ? 'bg-primary/15 text-primary font-medium shadow-sm'
-                          : 'hover:bg-muted/70 text-foreground'
+                        className={`group relative flex items-center gap-3 px-4 py-3 mx-1.5 rounded-xl text-sm transition-all duration-300 ${isActive(item.path)
+                          ? 'bg-primary/10 text-primary font-medium'
+                          : 'hover:bg-muted/60 text-foreground/80 hover:text-foreground'
                           }`}
                       >
-                        <Icon className={`w-4 h-4 transition-transform duration-300 ${isActive(item.path) ? 'text-primary' : 'text-muted-foreground group-hover:text-primary group-hover:scale-110'}`} />
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${isActive(item.path) ? 'bg-primary/20' : 'bg-muted/50 group-hover:bg-primary/10'}`}>
+                          <Icon className={`w-4 h-4 transition-all duration-300 ${isActive(item.path) ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`} />
+                        </div>
                         <span className="flex-1">{item.name}</span>
                         {isActive(item.path) && (
-                          <div className="absolute right-2 w-1.5 h-1.5 rounded-full bg-primary" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                         )}
                       </Link>
                     );
@@ -228,9 +235,9 @@ const Header = () => {
             {/* Guidance */}
             <Link
               to="/guidance"
-              className={`text-sm font-medium rounded-full px-4 py-2 transition-all ${isActive("/guidance")
-                ? 'bg-primary text-primary-foreground'
-                : 'hover:bg-muted/60'
+              className={`text-sm font-medium rounded-full px-4 py-2.5 transition-all duration-300 ${isActive("/guidance")
+                ? 'bg-primary/15 text-primary font-semibold'
+                : 'text-foreground/80 hover:bg-muted/50 hover:text-foreground'
                 }`}
             >
               Guidance
@@ -239,9 +246,9 @@ const Header = () => {
             {/* Contact */}
             <Link
               to="/contact"
-              className={`text-sm font-medium rounded-full px-4 py-2 transition-all ${isActive("/contact")
-                ? 'bg-primary text-primary-foreground'
-                : 'hover:bg-muted/60'
+              className={`text-sm font-medium rounded-full px-4 py-2.5 transition-all duration-300 ${isActive("/contact")
+                ? 'bg-primary/15 text-primary font-semibold'
+                : 'text-foreground/80 hover:bg-muted/50 hover:text-foreground'
                 }`}
             >
               Contact
@@ -252,46 +259,46 @@ const Header = () => {
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-muted/60 transition-all"
+              className="w-10 h-10 rounded-full bg-muted/50 hover:bg-muted transition-all duration-300 flex items-center justify-center border border-border/30"
               aria-label="Toggle theme"
             >
               {isDark ? (
-                <Sun className="h-4 w-4 sm:h-5 sm:w-5" />
+                <Sun className="h-4 w-4 text-gold" />
               ) : (
-                <Moon className="h-4 w-4 sm:h-5 sm:w-5" />
+                <Moon className="h-4 w-4 text-foreground/70" />
               )}
             </button>
 
             <Link to="/guidance">
-              <Button className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-2 hover:scale-105 transition-all font-medium">
+              <Button className="hidden md:flex btn-golden rounded-full px-6 py-2.5 font-medium text-sm shadow-soft hover:shadow-golden transition-all duration-300">
                 Get Guidance
               </Button>
             </Link>
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2"
+              className="lg:hidden w-10 h-10 rounded-full bg-muted/50 hover:bg-muted transition-all duration-300 flex items-center justify-center border border-border/30"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-2 py-4 px-4 rounded-2xl bg-card/95 backdrop-blur-lg border border-border animate-fade-in">
-            <nav className="flex flex-col gap-2">
+          <div className="lg:hidden mt-3 py-5 px-5 rounded-2xl bg-card/95 backdrop-blur-lg border border-border/40 shadow-lg animate-fade-in">
+            <nav className="flex flex-col gap-1">
               {/* Main Items */}
               {mainNavItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`text-sm font-medium rounded-lg px-4 py-3 transition-all ${isActive(item.path)
-                    ? 'bg-primary text-primary-foreground'
-                    : 'hover:bg-muted/60'
+                  className={`text-sm font-medium rounded-xl px-4 py-3 transition-all duration-300 ${isActive(item.path)
+                    ? 'bg-primary/15 text-primary font-semibold'
+                    : 'text-foreground/80 hover:bg-muted/50 hover:text-foreground'
                     }`}
                 >
                   {item.name}
@@ -299,75 +306,84 @@ const Header = () => {
               ))}
 
               {/* Resources Section */}
-              <div className="mt-2">
-                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-4 py-2">
+              <div className="mt-3 pt-3 border-t border-border/30">
+                <div className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-widest px-4 py-2">
                   Resources
                 </div>
-                {resourcesDropdown.items.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block text-sm font-medium rounded-lg px-6 py-2 transition-all ${isActive(item.path)
-                      ? 'bg-primary/10 text-primary'
-                      : 'hover:bg-muted/60'
-                      }`}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {resourcesDropdown.items.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`flex items-center gap-3 text-sm font-medium rounded-xl px-4 py-2.5 transition-all duration-300 ${isActive(item.path)
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-foreground/70 hover:bg-muted/50 hover:text-foreground'
+                        }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      {item.name}
+                    </Link>
+                  );
+                })}
               </div>
 
               {/* Activities Section */}
-              <div className="mt-2">
-                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-4 py-2">
+              <div className="mt-3 pt-3 border-t border-border/30">
+                <div className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-widest px-4 py-2">
                   Activities
                 </div>
-                {activitiesDropdown.items.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block text-sm font-medium rounded-lg px-6 py-2 transition-all ${isActive(item.path)
-                      ? 'bg-primary/10 text-primary'
-                      : 'hover:bg-muted/60'
-                      }`}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {activitiesDropdown.items.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`flex items-center gap-3 text-sm font-medium rounded-xl px-4 py-2.5 transition-all duration-300 ${isActive(item.path)
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-foreground/70 hover:bg-muted/50 hover:text-foreground'
+                        }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      {item.name}
+                    </Link>
+                  );
+                })}
               </div>
 
-              {/* Guidance */}
-              <Link
-                to="/guidance"
-                onClick={() => setIsMenuOpen(false)}
-                className={`text-sm font-medium rounded-lg px-4 py-3 transition-all mt-2 ${isActive("/guidance")
-                  ? 'bg-primary text-primary-foreground'
-                  : 'hover:bg-muted/60'
-                  }`}
-              >
-                Guidance
-              </Link>
+              {/* Guidance & Contact */}
+              <div className="mt-3 pt-3 border-t border-border/30 space-y-1">
+                <Link
+                  to="/guidance"
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block text-sm font-medium rounded-xl px-4 py-3 transition-all duration-300 ${isActive("/guidance")
+                    ? 'bg-primary/15 text-primary font-semibold'
+                    : 'text-foreground/80 hover:bg-muted/50 hover:text-foreground'
+                    }`}
+                >
+                  Guidance
+                </Link>
 
-              {/* Contact */}
-              <Link
-                to="/contact"
-                onClick={() => setIsMenuOpen(false)}
-                className={`text-sm font-medium rounded-lg px-4 py-3 transition-all ${isActive("/contact")
-                  ? 'bg-primary text-primary-foreground'
-                  : 'hover:bg-muted/60'
-                  }`}
-              >
-                Contact
-              </Link>
+                <Link
+                  to="/contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block text-sm font-medium rounded-xl px-4 py-3 transition-all duration-300 ${isActive("/contact")
+                    ? 'bg-primary/15 text-primary font-semibold'
+                    : 'text-foreground/80 hover:bg-muted/50 hover:text-foreground'
+                    }`}
+                >
+                  Contact
+                </Link>
+              </div>
 
               <Link
                 to="/guidance"
                 onClick={() => setIsMenuOpen(false)}
                 className="mt-4"
               >
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-full py-3">
+                <Button className="btn-golden rounded-full w-full py-3.5 font-medium shadow-soft">
                   Get Guidance
                 </Button>
               </Link>

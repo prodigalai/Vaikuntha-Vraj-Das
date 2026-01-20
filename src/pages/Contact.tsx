@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBackground from "@/components/PageBackground";
+import gardenBg from "@/assets/morning_meditation_bg.png";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -19,7 +21,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background animate-fade-in">
+    <div className="min-h-screen bg-transparent relative">
+      <PageBackground image={gardenBg} opacity={0.12} />
       <Header />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-16 text-center space-y-6">
@@ -31,7 +34,7 @@ const Contact = () => {
             Have a question or want to connect? Reach out to us through the form below or contact us directly.
           </p>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="rounded-2xl bg-card p-8">
@@ -39,54 +42,54 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   id="name"
-                  name="name" 
-                  value={formData.name} 
-                  onChange={handleChange} 
-                  required 
-                  placeholder="Enter your name" 
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter your name"
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   id="email"
-                  name="email" 
-                  value={formData.email} 
-                  onChange={handleChange} 
-                  required 
-                  placeholder="Enter your email" 
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
                 />
               </div>
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   id="subject"
-                  name="subject" 
-                  value={formData.subject} 
-                  onChange={handleChange} 
-                  required 
-                  placeholder="What is this regarding?" 
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50" 
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  placeholder="What is this regarding?"
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                <textarea 
+                <textarea
                   id="message"
-                  name="message" 
-                  value={formData.message} 
-                  onChange={handleChange} 
-                  required 
-                  rows={5} 
-                  placeholder="Your message..." 
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-background resize-none focus:outline-none focus:ring-2 focus:ring-primary/50" 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  placeholder="Your message..."
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background resize-none focus:outline-none focus:ring-2 focus:ring-primary/50"
                 />
               </div>
               <Button type="submit" className="w-full bg-primary text-primary-foreground rounded-full py-6 text-base font-medium">
@@ -158,39 +161,39 @@ const Contact = () => {
             <div className="rounded-2xl bg-card p-8">
               <h3 className="font-bold text-lg mb-4">Connect on Social Media</h3>
               <div className="flex gap-4">
-                <a 
-                  href="https://www.youtube.com/@vaikunthavrajdas" 
-                  target="_blank" 
+                <a
+                  href="https://www.youtube.com/@vaikunthavrajdas"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="group w-14 h-14 rounded-xl bg-muted/50 border border-border hover:border-red-500/50 hover:bg-red-500/10 flex items-center justify-center transition-all duration-300 hover:scale-110 p-2"
                 >
-                  <img 
-                    src="https://cdn3d.iconscout.com/3d/free/thumb/free-youtube-3d-icon-png-download-7516827.png" 
-                    alt="YouTube" 
+                  <img
+                    src="https://cdn3d.iconscout.com/3d/free/thumb/free-youtube-3d-icon-png-download-7516827.png"
+                    alt="YouTube"
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                   />
                 </a>
-                <a 
-                  href="https://www.instagram.com/vaikunthavrajdas/" 
-                  target="_blank" 
+                <a
+                  href="https://www.instagram.com/vaikunthavrajdas/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="group w-14 h-14 rounded-xl bg-muted/50 border border-border hover:border-pink-500/50 hover:bg-pink-500/10 flex items-center justify-center transition-all duration-300 hover:scale-110 p-2"
                 >
-                  <img 
-                    src="https://cdn3d.iconscout.com/3d/free/thumb/free-instagram-logo-3d-icon-png-download-12257263.png" 
-                    alt="Instagram" 
+                  <img
+                    src="https://cdn3d.iconscout.com/3d/free/thumb/free-instagram-logo-3d-icon-png-download-12257263.png"
+                    alt="Instagram"
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                   />
                 </a>
-                <a 
-                  href="https://www.facebook.com/vaikunthavrajdas/" 
-                  target="_blank" 
+                <a
+                  href="https://www.facebook.com/vaikunthavrajdas/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="group w-14 h-14 rounded-xl bg-muted/50 border border-border hover:border-blue-500/50 hover:bg-blue-500/10 flex items-center justify-center transition-all duration-300 hover:scale-110 p-2"
                 >
-                  <img 
-                    src="https://cdn3d.iconscout.com/3d/free/thumb/free-facebook-logo-3d-icon-png-download-12257268.png" 
-                    alt="Facebook" 
+                  <img
+                    src="https://cdn3d.iconscout.com/3d/free/thumb/free-facebook-logo-3d-icon-png-download-12257268.png"
+                    alt="Facebook"
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                   />
                 </a>
