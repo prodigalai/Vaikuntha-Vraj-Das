@@ -68,7 +68,7 @@ const caseStudyData: Record<string, {
       "Am I living for temporary pleasures or building something eternal?",
     ],
     relatedVideos: [
-      { title: "Overcoming Mental Challenges - Bhagavad Gita Perspective", videoId: "1Ay-sSBYZj8", duration: "45 min" },
+      { title: "Why is Life Unfair? | Vedic Perspective", videoId: "1MVjfrpIHaA", duration: "12 min" },
       { title: "Finding Purpose When Life Feels Meaningless", videoId: "hSaw27_Gxnw", duration: "32 min" },
     ],
     relatedStudies: ["stress-management-gita", "digital-addiction", "purpose-anxiety"],
@@ -172,7 +172,7 @@ const caseStudyData: Record<string, {
       "What would I do with an extra 4 hours every day?",
     ],
     relatedVideos: [
-      { title: "Mastering the Mind in Digital Age", videoId: "hSaw27_Gxnw", duration: "42 min" },
+      { title: "Mastering the Mind in Digital Age", videoId: "1MVjfrpIHaA", duration: "12 min" },
     ],
     relatedStudies: ["silent-epidemic-suicide-india", "purpose-anxiety"],
     fullArticle: [
@@ -218,7 +218,7 @@ const caseStudyData: Record<string, {
       "How would my life change if I truly trusted in a higher purpose?",
     ],
     relatedVideos: [
-      { title: "Finding Purpose Through Gita", videoId: "1lfBJ6eHUw0", duration: "50 min" },
+      { title: "Why is Life Unfair? | Finding Purpose", videoId: "1MVjfrpIHaA", duration: "12 min" },
     ],
     relatedStudies: ["silent-epidemic-suicide-india", "stress-management-gita", "career-dharma"],
     fullArticle: [

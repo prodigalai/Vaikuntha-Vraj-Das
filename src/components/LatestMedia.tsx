@@ -5,22 +5,22 @@ import blurredCityBg from "@/assets/blurred-cityscape-bg.jpg";
 
 const videos = [
   { 
-    title: "Managing Stress: Lessons from Gita", 
-    duration: "45 min", 
-    views: "12K", 
+    title: "Why is Life Unfair? | Vedic Perspective", 
+    duration: "12 min", 
+    views: "10K", 
+    videoId: "1MVjfrpIHaA" 
+  },
+  { 
+    title: "How to Build Unshakeable Focus", 
+    duration: "15 min", 
+    views: "5.5K", 
     videoId: "1Ay-sSBYZj8" 
   },
   { 
-    title: "Finding Purpose in Your 20s", 
-    duration: "38 min", 
-    views: "8.5K", 
+    title: "Finding Your Purpose the Gita Way", 
+    duration: "22 min", 
+    views: "8.2K", 
     videoId: "hSaw27_Gxnw" 
-  },
-  { 
-    title: "Building Meaningful Relationships", 
-    duration: "55 min", 
-    views: "6.1K", 
-    videoId: "1lfBJ6eHUw0" 
   },
 ];
 

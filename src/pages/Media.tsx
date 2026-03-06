@@ -29,42 +29,17 @@ const mediaItems = [
   {
     id: "1",
     type: "videos",
-    title: "Spiritual Wisdom for Daily Life",
-    topic: "Bhagavad Gita",
-    duration: "42 min",
-    videoId: "dAbfaizn8C8",
+    title: "Why is Life Unfair? | Vedic Perspective",
+    topic: "Mental Health",
+    duration: "12 min",
+    videoId: "1MVjfrpIHaA",
     views: "10K",
     platform: "YouTube",
-    date: "2 weeks ago",
+    date: "1 month ago",
   },
 ];
 
-const instagramReels = [
-  {
-    id: "insta1",
-    type: "shorts",
-    title: "Spiritual Insights",
-    platform: "Instagram",
-    url: "https://www.instagram.com/p/DMUOz18BFf6/",
-    postId: "DMUOz18BFf6",
-  },
-  {
-    id: "insta2",
-    type: "shorts",
-    title: "Daily Wisdom",
-    platform: "Instagram",
-    url: "https://www.instagram.com/p/DK96rq3Bqyd/",
-    postId: "DK96rq3Bqyd",
-  },
-  {
-    id: "fb1",
-    type: "shorts",
-    title: "Facebook Reel",
-    platform: "Facebook",
-    url: "https://www.facebook.com/reel/720049007402094",
-    postId: "720049007402094",
-  },
-];
+const instagramReels = [];
 
 const Media = () => {
   const { type } = useParams();
@@ -168,8 +143,8 @@ const Media = () => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/dAbfaizn8C8?rel=0"
-                title="Featured: Spiritual Wisdom for Daily Life"
+                src="https://www.youtube.com/embed/1MVjfrpIHaA?rel=0"
+                title="Featured: Why is Life Unfair?"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -192,9 +167,9 @@ const Media = () => {
                       2 weeks ago
                     </span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-3">Spiritual Wisdom for Daily Life</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-3">Why is Life Unfair?</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-                    Watch this inspiring discourse on applying spiritual wisdom to everyday challenges and finding peace in modern life through the timeless teachings of Bhagavad Gita.
+                    Discover a profound Vedic perspective on why we face challenges that seem unfair and how to navigate them with wisdom and resilience.
                   </p>
                 </div>
               </div>
@@ -209,7 +184,7 @@ const Media = () => {
                   Visit Channel
                 </a>
                 <a
-                  href="https://www.youtube.com/watch?v=dAbfaizn8C8"
+                  href="https://www.youtube.com/watch?v=1MVjfrpIHaA"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border hover:border-primary/50 font-medium transition-all duration-300 hover:scale-105"
@@ -269,65 +244,67 @@ const Media = () => {
         </section>
 
         {/* Instagram Reels Section */}
-        <section className="mb-20" data-animate="fadeInUp">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center">
-              <Instagram className="w-6 h-6 text-pink-500" />
+        {instagramReels.length > 0 && (
+          <section className="mb-20" data-animate="fadeInUp">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center">
+                <Instagram className="w-6 h-6 text-pink-500" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold">Instagram Reels & Posts</h2>
+                <p className="text-muted-foreground">Latest spiritual insights and wisdom</p>
+              </div>
             </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold">Instagram Reels & Posts</h2>
-              <p className="text-muted-foreground">Latest spiritual insights and wisdom</p>
-            </div>
-          </div>
-          <div
-            className="grid md:grid-cols-3 gap-6"
-            data-animate-group="fadeInUp"
-            data-stagger-delay="0.15"
-          >
-            {instagramReels.map((reel) => (
-              <a
-                key={reel.id}
-                href={reel.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden bg-card border border-border/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] hover:border-primary/30"
-                data-animate-item
-              >
-                <div className="relative aspect-[9/16] bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 flex items-center justify-center overflow-hidden">
-                  {reel.platform === "Instagram" ? (
-                    <>
-                      <Instagram className="w-20 h-20 text-pink-500/30 group-hover:text-pink-500 group-hover:scale-125 transition-all duration-500" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                    </>
-                  ) : (
-                    <>
-                      <Facebook className="w-20 h-20 text-blue-500/30 group-hover:text-blue-500 group-hover:scale-125 transition-all duration-500" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                    </>
-                  )}
-                  <div className="absolute top-4 left-4 px-3 py-1.5 rounded-xl bg-background/95 backdrop-blur-md border border-border/50 text-xs font-semibold shadow-lg">
-                    {reel.platform}
-                  </div>
-                  <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-background/95 backdrop-blur-md border border-border/50 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary" />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
+            <div
+              className="grid md:grid-cols-3 gap-6"
+              data-animate-group="fadeInUp"
+              data-stagger-delay="0.15"
+            >
+              {instagramReels.map((reel) => (
+                <a
+                  key={reel.id}
+                  href={reel.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative rounded-2xl overflow-hidden bg-card border border-border/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] hover:border-primary/30"
+                  data-animate-item
+                >
+                  <div className="relative aspect-[9/16] bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 flex items-center justify-center overflow-hidden">
                     {reel.platform === "Instagram" ? (
-                      <Instagram className="w-5 h-5 text-pink-500" />
+                      <>
+                        <Instagram className="w-20 h-20 text-pink-500/30 group-hover:text-pink-500 group-hover:scale-125 transition-all duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                      </>
                     ) : (
-                      <Facebook className="w-5 h-5 text-blue-500" />
+                      <>
+                        <Facebook className="w-20 h-20 text-blue-500/30 group-hover:text-blue-500 group-hover:scale-125 transition-all duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                      </>
                     )}
-                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{reel.platform}</span>
+                    <div className="absolute top-4 left-4 px-3 py-1.5 rounded-xl bg-background/95 backdrop-blur-md border border-border/50 text-xs font-semibold shadow-lg">
+                      {reel.platform}
+                    </div>
+                    <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-background/95 backdrop-blur-md border border-border/50 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary" />
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">{reel.title}</h3>
-                  <p className="text-sm text-muted-foreground">Click to view on {reel.platform}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      {reel.platform === "Instagram" ? (
+                        <Instagram className="w-5 h-5 text-pink-500" />
+                      ) : (
+                        <Facebook className="w-5 h-5 text-blue-500" />
+                      )}
+                      <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{reel.platform}</span>
+                    </div>
+                    <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">{reel.title}</h3>
+                    <p className="text-sm text-muted-foreground">Click to view on {reel.platform}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Media Grid */}
         {filteredMedia.length > 0 ? (

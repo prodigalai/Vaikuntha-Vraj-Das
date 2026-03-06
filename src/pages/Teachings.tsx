@@ -10,9 +10,9 @@ import bhagavadGitaImg from "@/assets/bhagavad-gita-study.jpg";
 // Actual YouTube video IDs from @vaikunthavrajdas channel
 const featuredVideos = {
   "bhagavad-gita": [
-    { id: "1Ay-sSBYZj8", title: "व्रज का मतलब क्या है?", duration: "12:45" },
-    { id: "hSaw27_Gxnw", title: "Gita Life Lessons", duration: "15:30" },
-    { id: "1lfBJ6eHUw0", title: "Understanding Dharma", duration: "18:20" },
+    { id: "1MVjfrpIHaA", title: "Why is Life Unfair? | Vedic Perspective", duration: "12:15" },
+    { id: "1Ay-sSBYZj8", title: "व्रj का मतलब क्या है?", duration: "12:45" },
+    { id: "hSaw27_Gxnw", title: "Finding Purpose in Modern Life", duration: "15:30" },
   ],
   "srimad-bhagavatam": [
     { id: "qVc-MPXhO-Q", title: "Bhagavatam Introduction", duration: "22:10" },
@@ -43,9 +43,9 @@ const teachingCategories = [
       { name: "Gita for Students", videoCount: 8, duration: "2h 45m", videos: featuredVideos["bhagavad-gita"] },
     ],
     startHere: [
-      { title: "Understanding the Context", videoId: "1Ay-sSBYZj8" },
+      { title: "Why is Life Unfair?", videoId: "1MVjfrpIHaA" },
+      { title: "Understanding Vraj", videoId: "1Ay-sSBYZj8" },
       { title: "The Yoga of Action", videoId: "hSaw27_Gxnw" },
-      { title: "Finding Your Dharma", videoId: "1lfBJ6eHUw0" },
     ],
   },
   {

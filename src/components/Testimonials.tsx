@@ -4,7 +4,7 @@ import blurredCityBg from "@/assets/blurred-cityscape-bg.jpg";
 const testimonials = [
   { name: "Rahul S.", role: "IIT Delhi Student", quote: "Prabhuji's guidance helped me find clarity during my most stressful semester. His practical approach to spirituality resonates deeply." },
   { name: "Priya M.", role: "Young Professional", quote: "The case studies and practical protocols have transformed how I handle workplace stress. Forever grateful." },
-  { name: "Sharma Family", role: "Delhi", quote: "Our family attends the weekly Gita sessions. It has brought us closer together and given us a spiritual foundation." },
+  { name: "Amit K.", role: "NIT Allahabad Graduate", quote: "I was struggling with career anxiety, but the Gita workshops showed me how to align my work with my nature. Truly life-changing." },
 ];
 
 const Testimonials = () => {
