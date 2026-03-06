@@ -12,23 +12,10 @@ const featuredVideos = {
   "bhagavad-gita": [
     { id: "1MVjfrpIHaA", title: "Why is Life Unfair? | Vedic Perspective", duration: "12:15" },
     { id: "1Ay-sSBYZj8", title: "व्रj का मतलब क्या है?", duration: "12:45" },
-    { id: "hSaw27_Gxnw", title: "Finding Purpose in Modern Life", duration: "15:30" },
   ],
-  "srimad-bhagavatam": [
-    { id: "qVc-MPXhO-Q", title: "Bhagavatam Introduction", duration: "22:10" },
-    { id: "YvJU3yYBqJE", title: "Krishna's Pastimes", duration: "19:45" },
-    { id: "ZNP3U_mSb6k", title: "Lessons from Devotees", duration: "16:30" },
-  ],
-  "caitanya-caritamrta": [
-    { id: "KfGH_eqoEHk", title: "Who is Mahaprabhu?", duration: "14:20" },
-    { id: "sDC8xKQ8gNU", title: "Power of Sankirtana", duration: "11:55" },
-    { id: "0B4Fp1hCLdY", title: "Mercy of the Lord", duration: "17:40" },
-  ],
-  "practice": [
-    { id: "TI-6qPhB2vE", title: "Morning Sadhana Guide", duration: "20:15" },
-    { id: "2O2FLGxJzS4", title: "Japa Meditation Tips", duration: "13:25" },
-    { id: "6aJxN7VYh8Q", title: "Building Spiritual Habits", duration: "16:50" },
-  ],
+  "srimad-bhagavatam": [],
+  "caitanya-caritamrta": [],
+  "practice": [],
 };
 
 const teachingCategories = [
@@ -45,7 +32,6 @@ const teachingCategories = [
     startHere: [
       { title: "Why is Life Unfair?", videoId: "1MVjfrpIHaA" },
       { title: "Understanding Vraj", videoId: "1Ay-sSBYZj8" },
-      { title: "The Yoga of Action", videoId: "hSaw27_Gxnw" },
     ],
   },
   {
@@ -58,11 +44,7 @@ const teachingCategories = [
       { name: "Character Studies", videoCount: 10, duration: "3h 45m", videos: featuredVideos["srimad-bhagavatam"] },
       { name: "Practical Applications", videoCount: 8, duration: "2h 30m", videos: featuredVideos["srimad-bhagavatam"] },
     ],
-    startHere: [
-      { title: "Introduction to Bhagavatam", videoId: "qVc-MPXhO-Q" },
-      { title: "Krishna's Pastimes", videoId: "YvJU3yYBqJE" },
-      { title: "Lessons from Great Devotees", videoId: "ZNP3U_mSb6k" },
-    ],
+    startHere: [],
   },
   {
     id: "caitanya-caritamrta",
@@ -74,11 +56,7 @@ const teachingCategories = [
       { name: "Teachings of Mahaprabhu", videoCount: 10, duration: "3h 30m", videos: featuredVideos["caitanya-caritamrta"] },
       { name: "Kirtan & Chanting", videoCount: 6, duration: "1h 45m", videos: featuredVideos["caitanya-caritamrta"] },
     ],
-    startHere: [
-      { title: "Who is Caitanya Mahaprabhu?", videoId: "KfGH_eqoEHk" },
-      { title: "The Power of Sankirtana", videoId: "sDC8xKQ8gNU" },
-      { title: "Mercy of the Lord", videoId: "0B4Fp1hCLdY" },
-    ],
+    startHere: [],
   },
   {
     id: "practice",
@@ -90,11 +68,7 @@ const teachingCategories = [
       { name: "Japa Meditation", videoCount: 5, duration: "1h 45m", videos: featuredVideos["practice"] },
       { name: "Building Spiritual Habits", videoCount: 9, duration: "3h 15m", videos: featuredVideos["practice"] },
     ],
-    startHere: [
-      { title: "Starting Your Practice", videoId: "TI-6qPhB2vE" },
-      { title: "The Power of Japa", videoId: "2O2FLGxJzS4" },
-      { title: "Creating a Sacred Routine", videoId: "6aJxN7VYh8Q" },
-    ],
+    startHere: [],
   },
 ];
 

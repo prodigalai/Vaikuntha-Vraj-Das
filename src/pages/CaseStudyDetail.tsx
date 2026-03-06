@@ -69,7 +69,6 @@ const caseStudyData: Record<string, {
     ],
     relatedVideos: [
       { title: "Why is Life Unfair? | Vedic Perspective", videoId: "1MVjfrpIHaA", duration: "12 min" },
-      { title: "Finding Purpose When Life Feels Meaningless", videoId: "hSaw27_Gxnw", duration: "32 min" },
     ],
     relatedStudies: ["stress-management-gita", "digital-addiction", "purpose-anxiety"],
     fullArticle: [
@@ -125,7 +124,7 @@ const caseStudyData: Record<string, {
       "How would I work differently if I focused only on the action, not the outcome?",
     ],
     relatedVideos: [
-      { title: "The Secret to Stress-Free Living", videoId: "1lfBJ6eHUw0", duration: "38 min" },
+      { title: "Managing Stress the Gita Way", videoId: "1Ay-sSBYZj8", duration: "12 min" },
     ],
     relatedStudies: ["silent-epidemic-suicide-india", "purpose-anxiety", "career-dharma"],
     fullArticle: [
@@ -218,7 +217,7 @@ const caseStudyData: Record<string, {
       "How would my life change if I truly trusted in a higher purpose?",
     ],
     relatedVideos: [
-      { title: "Why is Life Unfair? | Finding Purpose", videoId: "1MVjfrpIHaA", duration: "12 min" },
+      { title: "Finding Purpose | Vedic Perspective", videoId: "1MVjfrpIHaA", duration: "12 min" },
     ],
     relatedStudies: ["silent-epidemic-suicide-india", "stress-management-gita", "career-dharma"],
     fullArticle: [
@@ -264,7 +263,7 @@ const caseStudyData: Record<string, {
       "How can my work become an offering rather than just a means to earn?",
     ],
     relatedVideos: [
-      { title: "Career Guidance from Bhagavad Gita", videoId: "1lfBJ6eHUw0", duration: "45 min" },
+      { title: "Lessons from Bhagavad Gita", videoId: "1MVjfrpIHaA", duration: "12 min" },
     ],
     relatedStudies: ["purpose-anxiety", "stress-management-gita"],
     fullArticle: [
@@ -309,7 +308,7 @@ const caseStudyData: Record<string, {
       "How can we grow spiritually together?",
     ],
     relatedVideos: [
-      { title: "Spiritual Foundation for Relationships", videoId: "hSaw27_Gxnw", duration: "48 min" },
+      { title: "Spiritual Wisdom for Life", videoId: "1Ay-sSBYZj8", duration: "12 min" },
     ],
     relatedStudies: ["purpose-anxiety", "digital-addiction"],
     fullArticle: [
@@ -371,8 +370,7 @@ const caseStudyData: Record<string, {
       "What spiritual experiences have given me genuine, lasting happiness?",
     ],
     relatedVideos: [
-      { title: "Breaking the Chains: Spiritual Freedom from Addiction", videoId: "1Ay-sSBYZj8", duration: "58 min" },
-      { title: "The Higher Taste: Bhagavad Gita on Sense Control", videoId: "1lfBJ6eHUw0", duration: "42 min" },
+      { title: "Breaking the Chains | Spiritual Freedom", videoId: "1Ay-sSBYZj8", duration: "12 min" },
     ],
     relatedStudies: ["digital-addiction", "silent-epidemic-suicide-india", "purpose-anxiety"],
     fullArticle: [
@@ -451,8 +449,7 @@ const caseStudyData: Record<string, {
       "Who do I know whose faith I respect, and what can I learn from them?",
     ],
     relatedVideos: [
-      { title: "Reason and Faith: Are They Compatible?", videoId: "hSaw27_Gxnw", duration: "55 min" },
-      { title: "How to Develop Faith in Difficult Times", videoId: "1Ay-sSBYZj8", duration: "48 min" },
+      { title: "Developing Faith in Difficult Times", videoId: "1Ay-sSBYZj8", duration: "12 min" },
     ],
     relatedStudies: ["purpose-anxiety", "silent-epidemic-suicide-india", "stress-management-gita"],
     fullArticle: [
@@ -527,8 +524,7 @@ const caseStudyData: Record<string, {
       "What has this loss taught me about love, life, and what truly matters?",
     ],
     relatedVideos: [
-      { title: "Death and Beyond: The Bhagavad Gita's Teaching", videoId: "1lfBJ6eHUw0", duration: "50 min" },
-      { title: "Finding Peace in Loss", videoId: "1Ay-sSBYZj8", duration: "42 min" },
+      { title: "Finding Peace in Loss", videoId: "1Ay-sSBYZj8", duration: "12 min" },
     ],
     relatedStudies: ["silent-epidemic-suicide-india", "purpose-anxiety", "developing-faith"],
     fullArticle: [

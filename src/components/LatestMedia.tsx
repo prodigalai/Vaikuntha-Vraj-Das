@@ -10,18 +10,7 @@ const videos = [
     views: "10K", 
     videoId: "1MVjfrpIHaA" 
   },
-  { 
-    title: "How to Build Unshakeable Focus", 
-    duration: "15 min", 
-    views: "5.5K", 
-    videoId: "1Ay-sSBYZj8" 
-  },
-  { 
-    title: "Finding Your Purpose the Gita Way", 
-    duration: "22 min", 
-    views: "8.2K", 
-    videoId: "hSaw27_Gxnw" 
-  },
+
 ];
 
 const LatestMedia = () => {
