@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { Filter, Brain, Heart, Briefcase, Users, Baby, Sparkles } from "lucide-react";
+import { Filter, Brain, Heart, Briefcase, Users, Sparkles } from "lucide-react";
 import { useState } from "react";
 import PageBackground from "@/components/PageBackground";
 import lotusBg from "@/assets/lotus_pond_bg.png";
@@ -12,13 +12,12 @@ const categories = [
   { id: "relationships", label: "Relationships", icon: Heart },
   { id: "career", label: "Career", icon: Briefcase },
   { id: "youth", label: "Youth", icon: Users },
-  { id: "parenting", label: "Parenting", icon: Baby },
   { id: "habits", label: "Habits", icon: Sparkles },
   { id: "faith", label: "Faith", icon: Sparkles },
 ];
 
 const formats = ["All Formats", "Article", "Infographic", "Video", "Worksheet"];
-const audiences = ["All Audiences", "Student", "Young Professional", "Family"];
+const audiences = ["All Audiences", "Student", "Young Professional"];
 
 const caseStudies = [
   {
@@ -31,15 +30,7 @@ const caseStudies = [
     image: "https://images.unsplash.com/photo-1493836512294-502baa1986e2?w=800&q=80",
     featured: true,
   },
-  {
-    slug: "spiritual-parenting",
-    title: "Spiritual Parenting: Raising Conscious Children",
-    category: "parenting",
-    format: "Article",
-    audience: "Family",
-    description: "A comprehensive guide to nurturing spiritually aware, emotionally balanced, and purpose-driven children in the modern age.",
-    image: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&q=80",
-  },
+
   {
     slug: "addiction-recovery-spiritual",
     title: "Addiction Recovery: A Spiritual Approach",
@@ -63,7 +54,7 @@ const caseStudies = [
     title: "Navigating Grief and Loss",
     category: "mind",
     format: "Article",
-    audience: "Family",
+    audience: "Young Professional",
     description: "Finding peace and meaning when facing the death of loved ones or life's devastating losses through Vedic wisdom.",
     image: "https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?w=800&q=80",
   },
