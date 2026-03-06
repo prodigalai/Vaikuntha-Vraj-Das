@@ -102,7 +102,7 @@ const Media = () => {
           {/* Platform Links - Premium Design */}
           <div className="flex flex-wrap justify-center gap-4 mt-8" data-animate="fadeInUp">
             <a
-              href="https://www.youtube.com/@vaikunthavrajdas"
+              href="https://www.youtube.com/@vvdcare"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 px-6 py-4 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:scale-105"
@@ -200,7 +200,7 @@ const Media = () => {
               </div>
               <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-border/50">
                 <a
-                  href="https://www.youtube.com/@vaikunthavrajdas"
+                  href="https://www.youtube.com/@vvdcare"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/20 hover:scale-105"
@@ -429,7 +429,7 @@ const Media = () => {
                 Subscribe to our YouTube channel for weekly discourses on Bhagavad Gita, spiritual wisdom, and practical guidance for modern life.
               </p>
               <a
-                href="https://www.youtube.com/@vaikunthavrajdas?sub_confirmation=1"
+                href="https://www.youtube.com/@vvdcare?sub_confirmation=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-red-600 text-white font-semibold hover:bg-red-700 transition-all duration-300 shadow-xl shadow-red-600/30 hover:scale-105"

@@ -116,7 +116,7 @@ const Footer = () => {
             <h3 className="font-serif font-semibold text-lg mb-6 text-foreground">Connect</h3>
             <div className="flex gap-3 mb-6">
               <a
-                href="https://www.youtube.com/@vaikunthavrajdas"
+                href="https://www.youtube.com/@vvdcare"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-primary/10 hover:scale-110 hover:border-primary/30 transition-all duration-300 group p-2 shadow-sm"

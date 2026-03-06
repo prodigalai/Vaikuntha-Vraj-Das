@@ -162,7 +162,7 @@ const Contact = () => {
               <h3 className="font-bold text-lg mb-4">Connect on Social Media</h3>
               <div className="flex gap-4">
                 <a
-                  href="https://www.youtube.com/@vaikunthavrajdas"
+                  href="https://www.youtube.com/@vvdcare"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group w-14 h-14 rounded-xl bg-muted/50 border border-border hover:border-red-500/50 hover:bg-red-500/10 flex items-center justify-center transition-all duration-300 hover:scale-110 p-2"
